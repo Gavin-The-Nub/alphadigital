@@ -3,7 +3,7 @@ import { type SVGProps } from "react";
 import clsx from "clsx";
 import { Heading } from "@/components/common/Heading";
 import { Section } from "@/components/layout/SectionWrapper";
-import { ButtonLink } from "@/components/common/Button";
+import { ButtonLink } from "@/components/common/button";
 import s from "./Pricing/pricing.module.css";
 
 export function Pricing(pricing: any) {
