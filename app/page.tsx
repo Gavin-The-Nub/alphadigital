@@ -16,6 +16,7 @@ import { FreeformText } from "@/components/sections/FreeformText";
 import { Form } from "@/components/sections/Form";
 import Portfolio from "@/components/sections/Portfolio";
 import { BlogSection } from "@/components/sections/BlogSection";
+import { SectionTag } from "@/components/common/SectionTag";
 
 // Static content for the homepage
 const staticHomeContent = {
@@ -145,9 +146,10 @@ const staticHomeContent = {
     {
       __typename: "FeaturesBigImageComponent",
       _id: "big-feature-1",
+      tag: "Collaboration",
       image: {
         light: {
-          url: "https://via.placeholder.com/600x400",
+          url: "/f1.png",
           alt: "Feature image",
           width: 600,
           height: 400,
@@ -191,6 +193,7 @@ const staticHomeContent = {
     {
       __typename: "FeaturesSideBySideComponent",
       _id: "side-features-1",
+      tag:"Services",
       heading: {
         title: "Our Services",
         subtitle: "Comprehensive social media marketing solutions tailored to grow your business and engage your audience.",
@@ -248,7 +251,20 @@ const staticHomeContent = {
           
         ],
       },
-      actions: [],
+      actions: [
+        {
+          _id: "side-features-cta-1",
+          href: "/contact",
+          label: "Get Started",
+          type: "primary",
+        },
+        {
+          _id: "side-features-cta-2",
+          href: "/portfolio",
+          label: "View Portfolio",
+          type: "secondary",
+        },
+      ],
     },
     // Callout 1
     {
@@ -279,7 +295,7 @@ const staticHomeContent = {
       quotes: [
         {
           _id: "quote-1",
-          quote: "Working with your team on our social media marketing changed everything. Our Instagram engagement tripled in just a month!",
+          quote: `"Working with your team on our social media marketing changed everything. Our Instagram engagement tripled in just a month!"`,
           author: {
             _id: "author-1",
             _title: "Alyssa R.",
@@ -299,7 +315,7 @@ const staticHomeContent = {
         },
         {
           _id: "quote-2",
-          quote: "The website you built for us is fast, clean, and professional. Our inquiries have doubled since launch!",
+          quote: `"The website you built for us is fast, clean, and professional. Our inquiries have doubled since launch!"`,
           author: {
             _id: "author-2",
             _title: "Jane Smith",
@@ -319,7 +335,7 @@ const staticHomeContent = {
         },
         {
           _id: "quote-3",
-          quote: "The photo and video production captured exactly what our brand stands for. Top-tier quality and great communication!",
+          quote: `"The photo and video production captured exactly what our brand stands for. Top-tier quality and great communication!"`,
           author: {
             _id: "author-3",
             _title: "Lebron James",
@@ -343,6 +359,7 @@ const staticHomeContent = {
     {
       __typename: "PricingComponent",
       _id: "pricing-1",
+      tag: "Pricing",
       heading: {
         title: "Choose the plan that's right for you",
         subtitle: "We offer flexible pricing options to suit your needs.",
@@ -408,6 +425,7 @@ const staticHomeContent = {
     {
       __typename: "FaqComponent",
       _id: "faq-1",
+      tag: "FAQs",
       heading: {
         title: "Frequently Asked Questions",
         subtitle: "Advice and answers from the our team",

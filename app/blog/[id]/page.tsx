@@ -1,181 +1,326 @@
-import { notFound } from "next/navigation"
-import Image from "next/image"
-import Link from "next/link"
-import type { Metadata } from "next"
-import { getBlogPost, getBlogPosts } from "../../../lib/blog-data"
+"use client";
+import { useState, useEffect } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { getBlogPost, type BlogPost } from "@/lib/supabase-blog";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft, Calendar, User, Tag, Share2, BookOpen, Copy, Check } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ButtonLink } from "@/components/common/button";
 
-interface BlogPostPageProps {
-  params: {
-    id: string
+export default function BlogPostPage() {
+  const params = useParams();
+  const router = useRouter();
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const loadPost = async () => {
+      if (!params.id) return;
+      
+      setLoading(true);
+      setError(null);
+      
+      try {
+        const postData = await getBlogPost(params.id as string);
+        if (postData) {
+          setPost(postData);
+        } else {
+          setError("Post not found");
+        }
+      } catch (err) {
+        setError("Failed to load post");
+        console.error("Error loading post:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadPost();
+  }, [params.id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-950 py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-2 text-gray-600">Loading blog post...</p>
+          </div>
+        </div>
+      </div>
+    );
   }
-}
 
-export async function generateStaticParams() {
-  const posts = getBlogPosts()
-  return posts.map((post) => ({
-    id: post.id,
-  }))
-}
-
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = getBlogPost(params.id)
-
-  if (!post) {
-    return {
-      title: "Post Not Found",
-    }
+  if (error || !post) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-950 py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              {error || "Post not found"}
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400 mb-8">
+              The blog post you're looking for doesn't exist or has been removed.
+            </p>
+            <Button onClick={() => router.push("/blog")}>
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Blog
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
   }
 
-  return {
-    title: `${post.title} | Your Site`,
-    description: post.description,
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      images: [post.image],
-    },
-  }
-}
+  // Convert markdown content to HTML (simple conversion)
+  const convertMarkdownToHTML = (markdown: string) => {
+    return markdown
+      .replace(/^### (.*$)/gim, '<h3 class="text-xl font-semibold mt-6 mb-3">$1</h3>')
+      .replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-8 mb-4">$1</h2>')
+      .replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold mt-8 mb-4">$1</h1>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/^- (.*$)/gim, '<li class="ml-4">$1</li>')
+      .replace(/\n\n/g, '</p><p class="mb-4">')
+      .replace(/^<p/, '<p class="mb-4 leading-relaxed"');
+  };
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPost(params.id)
-
-  if (!post) {
-    notFound()
-  }
+  const htmlContent = convertMarkdownToHTML(post.content);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16">
-        {/* Back to blog link */}
-        <div className="mb-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+      {/* Back Button */}
+      <div className="bg-white dark:bg-gray-900 border-b">
+        <div className="container mx-auto px-4 py-4">
+          <Button
+            variant="ghost"
+            onClick={() => router.push("/blog")}
+            className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
           >
-            <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
+            <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Blog
-          </Link>
+          </Button>
         </div>
+      </div>
 
-        {/* Article header */}
-        <header className="mb-8">
-          <div className="mb-4">
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-medium">
-              {post.categories[0]}
-            </span>
-          </div>
-
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">{post.title}</h1>
-
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">{post.description}</p>
-
-          <div className="flex items-center mb-8">
-            <Image
-              src={post.author.avatar || "/placeholder.svg"}
-              alt={post.author.name}
-              width={48}
-              height={48}
-              className="w-12 h-12 rounded-full mr-4"
-            />
-            <div>
-              <div className="font-medium text-gray-900 dark:text-white">{post.author.name}</div>
-              <div className="text-gray-600 dark:text-gray-400">
-                <time dateTime={post.publishedAt}>
-                  {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </time>
-              </div>
-            </div>
-          </div>
-
-          {/* Featured image */}
-          <div className="mb-8">
-            <Image
-              src={post.image || "/placeholder.svg"}
-              alt={post.title}
-              width={1200}
-              height={600}
-              className="w-full h-64 md:h-96 object-cover rounded-lg"
-            />
-          </div>
-        </header>
-
-        {/* Article content */}
-        <div className="max-w-4xl mx-auto">
-          <div className="prose prose-lg dark:prose-invert max-w-none">
-            <div
-              className="text-gray-900 dark:text-gray-100 leading-relaxed"
-              dangerouslySetInnerHTML={{
-                __html: post.content
-                  .replace(/\n/g, "<br />")
-                  .replace(/#{3}\s(.+)/g, '<h3 class="text-xl font-bold mt-8 mb-4">$1</h3>')
-                  .replace(/#{2}\s(.+)/g, '<h2 class="text-2xl font-bold mt-8 mb-4">$1</h2>')
-                  .replace(/#{1}\s(.+)/g, '<h1 class="text-3xl font-bold mt-8 mb-4">$1</h1>')
-                  .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-                  .replace(
-                    /```(\w+)?\n([\s\S]*?)```/g,
-                    '<pre class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto my-4"><code>$2</code></pre>',
-                  )
-                  .replace(/`(.+?)`/g, '<code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm">$1</code>')
-                  .replace(/^- (.+)/gm, '<li class="ml-4">$1</li>')
-                  .replace(/(\d+)\.\s(.+)/g, '<li class="ml-4">$2</li>'),
-              }}
-            />
-          </div>
-
-          {/* Categories */}
-          <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Categories</h3>
-            <div className="flex flex-wrap gap-2">
-              {post.categories.map((category) => (
+      {/* Hero Section */}
+      <div className="bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto">
+            {/* Categories */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {post.categories.map((category, index) => (
                 <span
-                  key={category}
-                  className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-md text-sm"
+                  key={index}
+                  className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full dark:bg-blue-900 dark:text-blue-200"
                 >
                   {category}
                 </span>
               ))}
             </div>
+
+            {/* Title */}
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              {post.title}
+            </h1>
+
+            {/* Description */}
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+              {post.description}
+            </p>
+
+            {/* Meta Information */}
+            <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 dark:text-gray-400 mb-8">
+              <div className="flex items-center gap-2">
+                <User className="h-4 w-4" />
+                <span>{post.author_name}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                <span>{new Date(post.published_at).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-4 w-4" />
+                <span>5 min read</span>
+              </div>
+            </div>
+
+            {/* Featured Image */}
+            {post.image && (
+              <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden mb-8">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
           </div>
+        </div>
+      </div>
 
-          {/* Navigation */}
-          <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex justify-between items-center">
-              <Link
-                href="/blog"
-                className="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-              >
-                <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                All Posts
-              </Link>
+      {/* Content */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Main Content */}
+            <div className="lg:col-span-3">
+              <Card>
+                <CardContent className="p-8">
+                  <div 
+                    className="prose prose-lg max-w-none dark:prose-invert"
+                    dangerouslySetInnerHTML={{ __html: htmlContent }}
+                  />
+                </CardContent>
+              </Card>
+            </div>
 
-              <div className="text-center">
-                <p className="text-gray-600 dark:text-gray-400">Share this post</p>
-                <div className="flex space-x-2 mt-2">
-                  <button className="p-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                    </svg>
-                  </button>
-                  <button className="p-2 bg-blue-800 text-white rounded hover:bg-blue-900 transition-colors">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                    </svg>
-                  </button>
-                </div>
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="space-y-6">
+                {/* Author Card */}
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 relative">
+                        <Image
+                          src={post.author_avatar || "/placeholder-user.jpg"}
+                          alt={post.author_name}
+                          fill
+                          className="rounded-full object-cover"
+                        />
+                      </div>
+                      <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                        {post.author_name}
+                      </h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Digital Marketing Expert
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Share Card */}
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+                      Share this post
+                    </h3>
+                    <div className="space-y-2">
+                      <Button 
+                        variant="outline" 
+                        className="w-full justify-start"
+                        onClick={() => {
+                          const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}`;
+                          window.open(url, '_blank');
+                        }}
+                      >
+                        <svg className="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                        Share on Twitter
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="w-full justify-start"
+                        onClick={() => {
+                          const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`;
+                          window.open(url, '_blank');
+                        }}
+                      >
+                        <svg className="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        Share on LinkedIn
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="w-full justify-start"
+                        onClick={() => {
+                          navigator.clipboard.writeText(window.location.href).then(() => {
+                            setCopied(true);
+                            setTimeout(() => setCopied(false), 2000);
+                          }).catch(() => {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = window.location.href;
+                            document.body.appendChild(textArea);
+                            textArea.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(textArea);
+                            setCopied(true);
+                            setTimeout(() => setCopied(false), 2000);
+                          });
+                        }}
+                      >
+                        {copied ? (
+                          <Check className="h-4 w-4 mr-2 text-green-600" />
+                        ) : (
+                          <Copy className="h-4 w-4 mr-2" />
+                        )}
+                        {copied ? 'Copied!' : 'Copy Link'}
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Categories */}
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+                      Categories
+                    </h3>
+                    <div className="space-y-2">
+                      {post.categories.map((category, index) => (
+                        <Link
+                          key={index}
+                          href={`/blog?category=${category}`}
+                          className="block text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                        >
+                          {category}
+                        </Link>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Related Posts Section */}
+      <div className="bg-white dark:bg-gray-900 border-t">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+              Related Posts
+            </h2>
+            <div className="text-center py-8">
+              <p className="text-gray-600 dark:text-gray-400">
+                More posts coming soon...
+              </p>
+              <ButtonLink 
+                href="/blog"
+                intent="secondary"
+                size="lg"
+                className="mt-4"
+              >
+                View All Posts
+              </ButtonLink>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }

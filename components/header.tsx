@@ -15,7 +15,7 @@ export const Header = ({
         <div className="container mx-auto grid w-full grid-cols-[1fr_max-content_1fr] place-items-center content-center items-center px-6 *:first:justify-self-start">
           <ButtonLink unstyled className="flex items-center ring-offset-2" href="/">
             <DarkLightImageAutoscale {...logo} />
-            Alpha Digital Solutions
+            <span className="hidden sm:inline ml-2">Alpha Digital Solutions</span>
           </ButtonLink>
           <DesktopMenu {...header} />
           <MobileMenu {...header} />

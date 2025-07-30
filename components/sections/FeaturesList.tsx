@@ -6,6 +6,7 @@ import { DarkLightImage } from "@/components/common/DarkLightImage";
 export function FeaturesList({ featuresCardsList, heading }: any) {
   return (
     <Section container="default">
+      
       <Heading subtitle={heading.subtitle} tag={heading.tag}>
         <h4>{heading.title}</h4>
       </Heading>

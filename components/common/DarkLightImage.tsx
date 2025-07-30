@@ -1,4 +1,6 @@
+"use client";
 import clsx from "clsx";
+import { useEffect, useState } from "react";
 
 // Replace DarkLightImageProps with a plain type for light/dark image objects
 export type SimpleImage = {
@@ -34,10 +36,31 @@ export function DarkLightImage({
 }: DarkLightImageProps & { priority?: boolean }) {
   // Remove 'priority' from props before passing to <img>
   const { priority, ...imgProps } = props;
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Always render light image during SSR to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <img
+        alt={light.alt ?? alt ?? ""}
+        className={clsx("block", className)}
+        height={height ?? light.height}
+        src={light.url}
+        width={width ?? light.width}
+        style={style}
+        {...imgProps}
+      />
+    );
+  }
+
+  // After hydration, render both images with proper dark/light logic
   return (
     <>
-      {dark ? (
+      {dark && (
         <img
           alt={dark.alt ?? alt ?? ""}
           className={clsx("hidden dark:block", className)}
@@ -47,7 +70,7 @@ export function DarkLightImage({
           style={style}
           {...imgProps}
         />
-      ) : null}
+      )}
       <img
         alt={light.alt ?? alt ?? ""}
         className={clsx(dark && "dark:hidden", className)}

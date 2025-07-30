@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import type { BlogPost } from "@/lib/blog-data"
+import type { BlogPost } from "@/lib/supabase-blog"
 
 interface BlogCardProps {
   post: BlogPost
@@ -35,17 +35,17 @@ export function BlogCard({ post, variant = "default", className = "" }: BlogCard
       <div className="p-6">
         <div className="flex items-center mb-3">
           <Image
-            src={post.author.avatar || "/placeholder.svg"}
-            alt={post.author.name}
+            src={post.author_avatar || "/placeholder.svg"}
+            alt={post.author_name}
             width={32}
             height={32}
             className="w-8 h-8 rounded-full mr-3"
           />
           <div className="text-sm text-gray-600 dark:text-gray-400">
-            <span className="font-medium">{post.author.name}</span>
+            <span className="font-medium">{post.author_name}</span>
             <span className="mx-2">•</span>
-            <time dateTime={post.publishedAt}>
-              {new Date(post.publishedAt).toLocaleDateString("en-US", {
+            <time dateTime={post.published_at}>
+              {new Date(post.published_at).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",

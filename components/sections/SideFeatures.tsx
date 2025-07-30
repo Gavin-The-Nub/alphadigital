@@ -1,24 +1,27 @@
 import { Heading } from "@/components/common/Heading";
 import { Section } from "@/components/layout/SectionWrapper";
 import { TrackedButtonLink } from "@/components/tracked-button";
+import { SectionTag} from "../common/SectionTag";
 
 export function SideFeatures({
   featuresSideBySideList,
   heading,
   actions,
-  eventsKey,
+  eventsKey,tag
 }: any) {
   return (
     <Section
       className="relative lg:container lg:mx-auto lg:!flex-row lg:gap-0 lg:p-28"
       container="full"
-    >
-      <div className="container relative top-0 mx-auto shrink self-stretch px-6 lg:w-1/2 lg:pl-0 lg:pr-12 xl:pr-20">
+    > 
+      <div className="container relative top-0 mx-auto shrink self-stretch px-6 lg:w-1/2 lg:pl-0 lg:pr-12 xl:pr-20 ">
         <div className="sticky bottom-0 top-[calc(var(--header-height)+40px)] flex flex-col gap-10">
+        
           <Heading className="items-start" {...heading}>
+            
             <h4>{heading.title}</h4>
           </Heading>
-          <div className="flex items-center gap-3 md:order-3">
+          <div className="flex items-center justify-center gap-3 md:order-3">
             {actions?.map((action: any) => (
               <TrackedButtonLink
                 key={action._id}

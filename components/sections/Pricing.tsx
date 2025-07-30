@@ -5,10 +5,12 @@ import { Heading } from "@/components/common/Heading";
 import { Section } from "@/components/layout/SectionWrapper";
 import { ButtonLink } from "@/components/common/button";
 import s from "./Pricing/pricing.module.css";
+  
 
 export function Pricing(pricing: any) {
   return (
     <Section className="xl:max-w-screen-xl" id="pricing">
+
       <Heading {...pricing.heading}>
         <h4>{pricing.heading.title}</h4>
       </Heading>

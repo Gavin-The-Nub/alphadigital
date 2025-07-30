@@ -1,9 +1,11 @@
 import { Heading } from "@/components/common/Heading";
 import { Section } from "@/components/layout/SectionWrapper";
+import { SectionTag } from "@/components/common/SectionTag";
 
 export function Faq(faq: any) {
   return (
     <Section>
+      
       <Heading {...faq.heading}>
         <h4>{faq.heading.title}</h4>
       </Heading>

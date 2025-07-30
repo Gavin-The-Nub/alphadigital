@@ -17,6 +17,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "basehub.earth",
       },
+      {
+        protocol: "https",
+        hostname: "oonkdawaclbngnwiotni.supabase.co",
+      },
     ],
   },
 };
