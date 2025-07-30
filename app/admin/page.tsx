@@ -138,32 +138,38 @@ export default function AdminPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="text-3xl font-bold">Blog Admin</h1>
-            <p className="text-gray-600 dark:text-gray-400">Manage your blog posts</p>
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 mb-8">
+          <div className="text-center lg:text-left">
+            <h1 className="text-2xl lg:text-3xl font-bold hidden sm:block">Blog Admin</h1>
+            <h1 className="text-xl font-bold sm:hidden">Admin</h1>
+            <p className="text-gray-600 dark:text-gray-400 text-sm lg:text-base">Manage your blog posts</p>
           </div>
-          <div className="flex gap-2">
-            <Button 
-              variant="outline" 
-              onClick={() => router.push("/")} 
-              className="flex items-center gap-2"
-            >
-              <ArrowLeftIcon className="h-4 w-4" />
-              Return to Website
-            </Button>
-            <Button variant="outline" onClick={handleSignOut} className="flex items-center gap-2">
-              <LogOutIcon className="h-4 w-4" />
-              Logout
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-2">
+            <div className="flex gap-2">
+              <Button 
+                variant="outline" 
+                onClick={() => router.push("/")} 
+                className="flex items-center gap-2 text-sm"
+              >
+                <ArrowLeftIcon className="h-4 w-4" />
+                <span className="hidden sm:inline">Return to Website</span>
+                <span className="sm:hidden">Back</span>
+              </Button>
+              <Button variant="outline" onClick={handleSignOut} className="flex items-center gap-2 text-sm">
+                <LogOutIcon className="h-4 w-4" />
+                <span className="hidden sm:inline">Logout</span>
+                <span className="sm:hidden">Out</span>
+              </Button>
+            </div>
             <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
               <DialogTrigger asChild>
-                <Button className="flex items-center gap-2">
+                <Button className="flex items-center gap-2 text-sm">
                   <PlusIcon className="h-4 w-4" />
-                  Add New Post
+                  <span className="hidden sm:inline">Add New Post</span>
+                  <span className="sm:hidden">Add Post</span>
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+              <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto w-[95vw] sm:w-auto">
                 <DialogHeader>
                   <DialogTitle>Add New Blog Post</DialogTitle>
                   <DialogDescription>
@@ -246,70 +252,84 @@ export default function AdminPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Title</TableHead>
-                  <TableHead>Author</TableHead>
-                  <TableHead>Categories</TableHead>
-                  <TableHead>Published</TableHead>
-                  <TableHead>Actions</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {posts.map((post) => (
-                  <TableRow key={post.id}>
-                    <TableCell className="font-medium">{post.title}</TableCell>
-                    <TableCell>{post.author_name}</TableCell>
-                    <TableCell>
-                      <div className="flex flex-wrap gap-1">
-                        {post.categories.map((category, index) => (
-                          <span
-                            key={index}
-                            className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
-                          >
-                            {category}
-                          </span>
-                        ))}
-                      </div>
-                    </TableCell>
-                    <TableCell>{post.published_at}</TableCell>
-                    <TableCell>
-                      <div className="flex gap-2">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => openEditDialog(post)}
-                        >
-                          <PencilIcon className="h-4 w-4" />
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => window.open(`/blog/${post.id}`, '_blank')}
-                        >
-                          <EyeIcon className="h-4 w-4" />
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => handleDeletePost(post.id)}
-                          className="text-red-600 hover:text-red-700"
-                        >
-                          <TrashIcon className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    </TableCell>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Title</TableHead>
+                    <TableHead className="hidden md:table-cell">Author</TableHead>
+                    <TableHead className="hidden lg:table-cell">Categories</TableHead>
+                    <TableHead className="hidden md:table-cell">Published</TableHead>
+                    <TableHead>Actions</TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHeader>
+                <TableBody>
+                  {posts.map((post) => (
+                    <TableRow key={post.id}>
+                      <TableCell className="font-medium">
+                        <div>
+                          <div className="font-medium">{post.title}</div>
+                          <div className="text-sm text-gray-500 md:hidden">
+                            {post.author_name} • {post.published_at}
+                          </div>
+                        </div>
+                      </TableCell>
+                      <TableCell className="hidden md:table-cell">{post.author_name}</TableCell>
+                      <TableCell className="hidden lg:table-cell">
+                        <div className="flex flex-wrap gap-1">
+                          {post.categories.map((category, index) => (
+                            <span
+                              key={index}
+                              className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                            >
+                              {category}
+                            </span>
+                          ))}
+                        </div>
+                      </TableCell>
+                      <TableCell className="hidden md:table-cell">{post.published_at}</TableCell>
+                      <TableCell>
+                        <div className="flex gap-1 sm:gap-2">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => openEditDialog(post)}
+                            className="h-8 w-8 p-0 sm:h-9 sm:w-auto sm:px-3"
+                          >
+                            <PencilIcon className="h-4 w-4" />
+                            <span className="hidden sm:inline ml-1">Edit</span>
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => window.open(`/blog/${post.id}`, '_blank')}
+                            className="h-8 w-8 p-0 sm:h-9 sm:w-auto sm:px-3"
+                          >
+                            <EyeIcon className="h-4 w-4" />
+                            <span className="hidden sm:inline ml-1">View</span>
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => handleDeletePost(post.id)}
+                            className="h-8 w-8 p-0 sm:h-9 sm:w-auto sm:px-3 text-red-600 hover:text-red-700"
+                          >
+                            <TrashIcon className="h-4 w-4" />
+                            <span className="hidden sm:inline ml-1">Delete</span>
+                          </Button>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
           </CardContent>
         </Card>
 
         {/* Edit Dialog */}
         <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
-          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto w-[95vw] sm:w-auto">
             <DialogHeader>
               <DialogTitle>Edit Blog Post</DialogTitle>
               <DialogDescription>
