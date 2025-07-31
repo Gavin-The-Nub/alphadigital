@@ -2,10 +2,27 @@ import clsx from "clsx";
 import { AvatarsGroup } from "@/components/common/avatars-group";
 import { Avatar } from "@/components/common/avatar";
 import { TrackedButtonLink } from "@/components/tracked-button";
+import LightRays from "@/components/ui/light-rays";
 
 export default function Hero(hero: any) {
   return (
     <section className="relative min-h-[calc(630px-var(--header-height))] overflow-hidden pb-10">
+      {/* Light Rays Effect */}
+      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#4293f5"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
+        />
+      </div>
+      
     <div className="absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)] border-b border-[--border] dark:border-[--dark-border]">
       {/* Decorations */}
       <div className="col-span-1 flex h-full items-center justify-center" />
