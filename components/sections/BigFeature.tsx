@@ -1,16 +1,21 @@
 import { Heading } from "@/components/common/Heading";
 import { Section } from "@/components/layout/SectionWrapper";
-import { DarkLightImage } from "@/components/common/DarkLightImage";
+import { DarkLightVideo } from "@/components/common/DarkLightVideo";
 
 // Adjust the type as needed for your static data
-export function BigFeature({ featuresBigImageList, heading, image }: any) {
+export function BigFeature({ featuresBigImageList, heading, video }: any) {
   return (
-    <Section container="default">
-      <DarkLightImage
+    <Section container="default" className="big-feature-section">
+      <DarkLightVideo
         height={600}
         width={1216}
-        {...image}
+        {...video}
         className="block rounded-xl border border-[--border] dark:border-[--dark-border] md:order-3 md:w-full"
+        controls={false}
+        autoPlay={true}
+        muted={true}
+        loop={true}
+        playsInline={true}
       />
       <Heading {...heading}>
         <h4>{heading.title}</h4>

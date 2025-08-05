@@ -82,7 +82,7 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950" data-page="blog">
       {/* Hero Section */}
       <div className="bg-white dark:bg-gray-900 border-b">
         <div className="container mx-auto px-4 py-16">
@@ -210,29 +210,6 @@ export default function BlogPage() {
         )}
       </div>
 
-      {/* Newsletter Section */}
-      <div className="bg-white dark:bg-gray-900 border-t">
-        <div className="container mx-auto px-4 py-16">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Stay Updated
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-8">
-              Get the latest insights and tips delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1"
-              />
-              <Button className="whitespace-nowrap">
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

@@ -90,6 +90,14 @@ const staticData = {
                items: [],
              },
            },
+           {
+             _id: "nav-4",
+             _title: "Pricing",
+             href: "/pricing",
+             sublinks: {
+               items: [],
+             },
+           },
          ],
        },
        rightCtas: {
@@ -97,7 +105,7 @@ const staticData = {
            {
              _id: "cta-1",
              label: "Get Started",
-             href: "/contact",
+             href: "/get-started",
              type: "primary",
              icon: null,
            },
@@ -147,8 +155,8 @@ const staticData = {
              url: "/blog",
            },
            {
-             _title: "Contact",
-             url: "/contact",
+             _title: "Pricing",
+             url: "/pricing",
            },
          ],
        },
@@ -167,20 +175,6 @@ const staticData = {
            },
            url: "https://instagram.com",
          },
-         {
-           _title: "TikTok",
-           icon: {
-             url: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5LjU5OSA5LjQyYy0uNzM5IDAtMS40NzgtLjE0Ny0yLjE1Ny0uNDM5VjE1LjVjMCAyLjQ4NC0yLjAxNiA0LjUtNC41IDQuNXMtNC41LTIuMDE2LTQuNS00LjVTMTIuNDE2IDExIDE0LjkgMTFjLjM5NyAwIC43ODQuMDc4IDEuMTU2LjIyMlY5LjQyYy0uMzcyLS4xNDQtLjc1OS0uMjIyLTEuMTU2LS4yMjJDNi4wNzUgOS4yIDIgMTMuMjc1IDIgMTguMlMyLjA3NSAyNy4yIDcuMiAyNy4yYzUuMTI1IDAgOS4yLTQuMDc1IDkuMi05LjJ2LTguNTh6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4KPC9zdmc+Cg==",
-           },
-           url: "https://tiktok.com",
-         },
-         {
-           _title: "LinkedIn",
-           icon: {
-             url: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwLjQ0NyAyMC40NTJoLTMuNTU0di01LjU2OWMwLTEuMzI4LS4wMjctMy4wMzctMS44NTItMy4wMzctMS44NTMgMC0yLjEzNiAxLjQ0NS0yLjEzNiAyLjkzOXY1LjY2N0g5LjM1MVY5aDMuNDE0djEuNTYxaC4wNDZjLjQ3Ny0uOSAxLjYzNy0xLjg1IDMuMzctMS44NSAzLjYwMSAwIDQuMjY3IDIuMzcgNC4yNjcgNS40NTV2Ni4yODZ6TTUuMzM3IDcuNDMzeC0yLjA2My0uMDI2Yy0xLjE0NCAwLTEuODkyLjc5MS0xLjg5MiAxLjc5MSAwIDEuMDA0LjcyNCAxLjc5MSAxLjg1MiAxLjc5MWgyLjA2M2MuMTE0IDAgLjIyNi0uMDA5LjMzNy0uMDI2VjcuNDMzeiBtLTEuNzgyIDkuNzE5SDMuNTU1VjloMy4wNjR2OC4xNTJoLTMuMDY0eiBNMjIuMjI1IDBIMi43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMi43NzEgMjRoMTkuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiIgZmlsbD0iY3VycmVudENvbG9yIi8+Cjwvc3ZnPgo=",
-           },
-           url: "https://linkedin.com",
-         },
        ],
      },
   },
@@ -196,7 +190,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       lang="en"
       className="bg-[--surface-primary] text-[--text-primary] dark:bg-[--dark-surface-primary] dark:text-[--dark-text-primary] font-sans"
     >
-      <body className={`min-h-svh max-w-[100vw] ${geistMono.variable} ${geist.variable}`}>
+      <body className={`min-h-svh overflow-x-hidden ${geistMono.variable} ${geist.variable}`}>
         <Providers>
           <LayoutWrapper header={header} footer={footer} settings={settings}>
             {children}

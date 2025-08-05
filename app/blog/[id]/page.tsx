@@ -92,7 +92,7 @@ export default function BlogPostPage() {
   const htmlContent = convertMarkdownToHTML(post.content);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950" data-page="blog">
       {/* Back Button */}
       <div className="bg-white dark:bg-gray-900 border-b">
         <div className="container mx-auto px-4 py-4">

@@ -75,7 +75,7 @@ export default function LoginPage() {
       {session ? (
         <AdminPage />
       ) : (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4" data-page="login">
           <div className="w-full max-w-md">
             <Card className="shadow-xl border-0 bg-white/80 backdrop-blur-sm dark:bg-gray-900/80">
               <CardHeader className="space-y-1 text-center">

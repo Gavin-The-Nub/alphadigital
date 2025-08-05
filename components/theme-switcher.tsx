@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useTheme } from "next-themes";
-import { Half2Icon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { Half2Icon, MoonIcon, SunIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import clsx from "clsx";
 import { Button } from "@/components/common/button";
 
@@ -19,8 +19,8 @@ export function ThemeSwitcher() {
       <SwitchButton selectedTheme={selectedTheme} setTheme={setTheme} theme="light">
         <SunIcon color="currentColor" height={16} width={16} />
       </SwitchButton>
-      <SwitchButton selectedTheme={selectedTheme} setTheme={setTheme} theme="system">
-        <Half2Icon color="currentColor" height={16} width={16} />
+      <SwitchButton selectedTheme={selectedTheme} setTheme={setTheme} theme="digital-studio">
+        <HamburgerMenuIcon color="currentColor" height={16} width={16} />
       </SwitchButton>
       <SwitchButton selectedTheme={selectedTheme} setTheme={setTheme} theme="dark">
         <MoonIcon color="currentColor" height={16} width={16} />

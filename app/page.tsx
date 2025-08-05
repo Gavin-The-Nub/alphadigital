@@ -86,14 +86,9 @@ const staticHomeContent = {
     {
       __typename: "CompaniesComponent",
       _id: "companies-1",
-      subtitle: "Join 4,000+ companies already growing",
+      subtitle: "Join 50+ brands already growing",
       companies: [
-        { _title: "ProLine", url: "#", image: { url: "/c1.svg" } },
-        { _title: "hues", url: "#", image: { url: "/c2.svg" } },
-        { _title: "Greenish", url: "#", image: { url: "/c3.svg" } },
-        { _title: "Cloud", url: "#", image: { url: "/c4.svg" } },
-        { _title: "Volume", url: "#", image: { url: "/c5.svg" } },
-        { _title: "PinPoint", url: "#", image: { url: "/c6.svg" } },
+        { _title: "Companies", url: "#", image: { url: "/c1.png" } },
       ],
     },
     {
@@ -147,43 +142,41 @@ const staticHomeContent = {
       __typename: "FeaturesBigImageComponent",
       _id: "big-feature-1",
       tag: "Collaboration",
-      image: {
+      video: {
         light: {
-          url: "/f1.png",
-          alt: "Feature image",
+          url: "/avid.mp4",
+          alt: "Feature video",
           width: 600,
           height: 400,
           aspectRatio: "3:2",
-          blurDataURL: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k=",
         },
         dark: {
-          url: "/f1.png",
-          alt: "Feature image",
+          url: "/avid.mp4",
+          alt: "Feature video",
           width: 600,
           height: 400,
           aspectRatio: "3:2",
-          blurDataURL: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k=",
         },
       },
       heading: {
-        title: "Transform your digital presence",
-        subtitle: "We help brands grow through strategic marketing, standout content, and modern websites — tailored to meet your goals.",
+        title: "Our Values",
+        
       },
       featuresBigImageList: {
         items: [
           {
-            _title: "Social Media Growth",
-            description: "We manage and grow your presence on Facebook, Instagram, and TikTok with engaging content, strategy, and targeted campaigns that build real results.",
+            _title: "Mission",
+            description: "To build long-term client relationships rooted in clarity, consistency, and strategic marketing that works.",
             icon: { alt: "Communication", url: "/f1.svg" },
           },
           {
-            _title: "Content That Converts",
-            description: "From product photography to social media videos and branding visuals, we create high-quality content that tells your story and drives action.",
+            _title: "Brand Voice",
+            description: "Our voice is confident, grounded, and clarity first. We don’t overexplain. We simplify withsharp insight and real authority.",
             icon: { alt: "Task Management", url: "/f2.svg" },
           },
           {
-            _title: "Modern Website Development",
-            description: "We build responsive, fast-loading websites that reflect your brand and make it easy for customers to connect, explore, and convert.",
+            _title: "Core Focus",
+            description: "Helping brands create real momentum through strategy-driven content,  campaigns, and digital storytelling.",
             icon: { alt: "Security", url: "/f3.svg" },
           },
         ],
@@ -307,7 +300,7 @@ const staticHomeContent = {
             company: {
               _title: "TechCorp",
               image: {
-                url: "c1.svg",
+                url: "c1.png",
                 alt: "TechCorp",
               },
             },
@@ -327,7 +320,7 @@ const staticHomeContent = {
             company: {
               _title: "Startup",
               image: {
-                url: "c2.svg",
+                url: "c2.png",
                 alt: "Startup",
               },
             },
@@ -347,7 +340,7 @@ const staticHomeContent = {
             company: {
               _title: "NBA",
               image: {
-                url: "c4.svg",
+                url: "c4.png",
                 alt: "Startup",
               },
             },
@@ -369,16 +362,21 @@ const staticHomeContent = {
           {
             plan: {
               _id: "plan-1",
-              _title: "Starter",
-              price: "$199/project",
-              billed: "One-time payment",
+              _title: "Alpha Build",
+              price: "₱35,000/month",
+              billed: "4 months lock-in contract",
               isMostPopular: false,
               list: {
                 items: [
-                  { _id: "feature-1", _title: "Basic Social Media Management (1 platform)" },
-                  { _id: "feature-2", _title: "1 Branded Graphic per week" },
-                  { _id: "feature-3", _title: "Simple Website (Landing Page)" },
-                  { _id: "feature-4", _title: "Email Support" },
+                  { _id: "feature-1", _title: "Monthly Campaign Strategy" },
+                  { _id: "feature-2", _title: "15 Social Media Creatives per month" },
+                  { _id: "feature-3", _title: "5 Reels Videos (Ideation + Shooting + Editing)" },
+                  { _id: "feature-4", _title: "Social Media Management (FB & IG)" },
+                  { _id: "feature-5", _title: "15-minute daily engagement (Mon-Fri)" },
+                  { _id: "feature-6", _title: "15 Engaging Stories per month" },
+                  { _id: "feature-7", _title: "3 UGC / Influencer Collaborations" },
+                  { _id: "feature-8", _title: "Monthly Analytics Report" },
+                  { _id: "feature-9", _title: "End-of-Month Alignment Meeting" },
                 ],
               },
             },
@@ -386,16 +384,21 @@ const staticHomeContent = {
           {
             plan: {
               _id: "plan-2",
-              _title: "Pro",
-              price: "$499/project",
-              billed: "One-time payment",
+              _title: "Alpha Grow",
+              price: "₱50,000/month",
+              billed: "4 months lock-in contract",
               isMostPopular: true,
               list: {
                 items: [
-                  { _id: "feature-1", _title: "Social Media Marketing (3 platforms)" },
-                  { _id: "feature-2", _title: "TikTok Live Selling Assistance" },
-                  { _id: "feature-3", _title: "Standard Website (up to 5 pages)" },
-                  { _id: "feature-4", _title: "Photo & Video Content Creation" },
+                  { _id: "feature-1", _title: "Monthly Campaign Strategy (growth-focused)" },
+                  { _id: "feature-2", _title: "20 Social Media Creatives per month" },
+                  { _id: "feature-3", _title: "10 Reels Videos (Advanced concepts)" },
+                  { _id: "feature-4", _title: "Social Media Management (FB & IG)" },
+                  { _id: "feature-5", _title: "30-minute daily engagement (Mon-Fri)" },
+                  { _id: "feature-6", _title: "20 Engaging Stories per month" },
+                  { _id: "feature-7", _title: "5 UGC / Influencer Collaborations" },
+                  { _id: "feature-8", _title: "Monthly Analytics Report with insights" },
+                  { _id: "feature-9", _title: "End-of-Month Alignment + Quarterly Strategy Review" },
                 ],
               },
             },
@@ -403,16 +406,23 @@ const staticHomeContent = {
           {
             plan: {
               _id: "plan-3",
-              _title: "Enterprise",
-              price: "Custom Pricing",
-              billed: "Based on project scope",
+              _title: "Alpha Scale",
+              price: "₱75,000/month",
+              billed: "4 months lock-in contract",
               isMostPopular: false,
               list: {
                 items: [
-                  { _id: "feature-1", _title: "Full Service Branding + Strategy" },
-                  { _id: "feature-2", _title: "Advanced Web Development (Custom Features)" },
-                  { _id: "feature-3", _title: "Dedicated Account Manager" },
-                  { _id: "feature-4", _title: "Complete Social Media + Ad Campaign Management" },
+                  { _id: "feature-1", _title: "Custom Monthly Campaign Strategy" },
+                  { _id: "feature-2", _title: "30 Premium Social Media Creatives" },
+                  { _id: "feature-3", _title: "15 Reels / Short Videos (High-concept)" },
+                  { _id: "feature-4", _title: "25 Engaging Stories per month" },
+                  { _id: "feature-5", _title: "Up to 10 UGC / Influencer Collaborations" },
+                  { _id: "feature-6", _title: "Advanced Social Media Management" },
+                  { _id: "feature-7", _title: "Daily 30-min Engagement (M-F)" },
+                  { _id: "feature-8", _title: "Monthly Performance Analytics Report" },
+                  { _id: "feature-9", _title: "A/B Testing on Content Formats" },
+                  { _id: "feature-10", _title: "50% off Photo and Video Studio usage" },
+                  { _id: "feature-11", _title: "Access to Bonus Content Bank" },
                 ],
               },
             },
@@ -421,7 +431,7 @@ const staticHomeContent = {
         
       },
     },
-    // FAQ Section
+    // FAQ Section - Moved to pricing page
     {
       __typename: "FaqComponent",
       _id: "faq-1",

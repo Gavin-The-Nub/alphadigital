@@ -94,6 +94,42 @@ body {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  .digital-studio {
+    /* Digital Studio Theme - Based on the logo with vibrant red background and white text */
+    --background: 0 100% 50%; /* Vibrant red background */
+    --foreground: 0 0% 100%; /* Pure white text */
+    --card: 0 100% 45%; /* Slightly darker red for cards */
+    --card-foreground: 0 0% 100%;
+    --popover: 0 100% 45%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%; /* White primary */
+    --primary-foreground: 0 100% 50%;
+    --secondary: 0 100% 40%; /* Darker red for secondary */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 100% 35%; /* Even darker red for muted */
+    --muted-foreground: 0 0% 90%; /* Light gray text on muted */
+    --accent: 0 0% 100%; /* White accent */
+    --accent-foreground: 0 100% 50%;
+    --destructive: 0 100% 60%; /* Brighter red for destructive */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 100% 40%; /* Darker red border */
+    --input: 0 100% 40%;
+    --ring: 0 0% 100%; /* White ring */
+    --chart-1: 0 0% 100%; /* White chart colors */
+    --chart-2: 0 0% 95%;
+    --chart-3: 0 0% 90%;
+    --chart-4: 0 0% 85%;
+    --chart-5: 0 0% 80%;
+    --sidebar-background: 0 100% 45%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 100% 50%;
+    --sidebar-accent: 0 100% 40%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 100% 40%;
+    --sidebar-ring: 0 0% 100%;
+  }
 }
 
 /* Theme-specific color overrides */
@@ -290,6 +326,57 @@ body {
   --success-90: rgba(var(--success-rgb), 0.9);
   --success-95: rgba(var(--success-rgb), 0.95);
   --success-100: rgba(var(--success-rgb), 1);
+
+  /* Digital Studio Theme Custom Variables */
+  --digital-red-50: #fff5f5;
+  --digital-red-100: #fed7d7;
+  --digital-red-200: #feb2b2;
+  --digital-red-300: #fc8181;
+  --digital-red-400: #f56565;
+  --digital-red-500: #e53e3e;
+  --digital-red-600: #c53030;
+  --digital-red-700: #a0aec0;
+  --digital-red-800: #742a2a;
+  --digital-red-900: #521b1b;
+  --digital-red-950: #2d1b1b;
+  --digital-red-rgb-500: 229, 62, 62;
+
+  /* Digital Studio Grayscale Colors */
+  --digital-white-50: #ffffff;
+  --digital-white-100: #fafafa;
+  --digital-white-200: #f5f5f5;
+  --digital-white-300: #e5e5e5;
+  --digital-white-400: #d4d4d4;
+  --digital-white-500: #a3a3a3;
+  --digital-white-600: #737373;
+  --digital-white-700: #525252;
+  --digital-white-800: #404040;
+  --digital-white-900: #262626;
+  --digital-white-950: #171717;
+  --digital-white-rgb-50: 255, 255, 255;
+  --digital-white-rgb-100: 250, 250, 250;
+  --digital-white-rgb-200: 245, 245, 245;
+  --digital-white-rgb-300: 229, 229, 229;
+  --digital-white-rgb-400: 212, 212, 212;
+  --digital-white-rgb-500: 163, 163, 163;
+  --digital-white-rgb-600: 115, 115, 115;
+  --digital-white-rgb-700: 82, 82, 82;
+  --digital-white-rgb-800: 64, 64, 64;
+  --digital-white-rgb-900: 38, 38, 38;
+  --digital-white-rgb-950: 23, 23, 23;
+
+  /* Digital Studio RGBs for all levels */
+  --digital-red-rgb-50: 255, 245, 245;
+  --digital-red-rgb-100: 254, 215, 215;
+  --digital-red-rgb-200: 254, 178, 178;
+  --digital-red-rgb-300: 252, 129, 129;
+  --digital-red-rgb-400: 245, 101, 101;
+  --digital-red-rgb-500: 229, 62, 62;
+  --digital-red-rgb-600: 197, 48, 48;
+  --digital-red-rgb-700: 160, 174, 192;
+  --digital-red-rgb-800: 116, 42, 42;
+  --digital-red-rgb-900: 82, 27, 27;
+  --digital-red-rgb-950: 45, 27, 27;
 }
 
 /* Theme-specific color overrides */
@@ -412,4 +499,1363 @@ body {
     0 0 2px 2px var(--tw-shadow),
     0 0 6px 3px var(--tw-ring-offset-shadow),
     0 0 8px 4px var(--tw-ring-shadow);
+}
+
+/* Digital Studio Theme Overrides */
+.digital-studio {
+  color: var(--digital-white-50);
+  background-color: var(--digital-red-500);
+
+  ::selection {
+    background-color: var(--digital-white-200);
+    color: var(--digital-red-500);
+  }
+
+  *:focus-visible {
+    outline-color: var(--digital-white-300);
+  }
+}
+
+.digital-studio {
+  /* Digital Studio Theme Semantic Colors */
+--text-primary: var(--digital-white-50);
+--text-secondary: var(--digital-white-200);
+--text-tertiary: var(--digital-white-100);
+
+--surface-primary: var(--digital-red-500);
+--surface-secondary: var(--digital-red-600);
+--surface-tertiary: var(--digital-red-700);
+
+--border: var(--digital-red-400);
+--control: var(--digital-white-50);
+
+/* Dark Mode Semantic Colors for Digital Studio */
+--dark-text-primary: var(--digital-white-50);
+--dark-text-secondary: var(--digital-white-200);
+--dark-text-tertiary: var(--digital-white-100);
+
+  --dark-surface-primary: var(--digital-red-500);
+  --dark-surface-secondary: var(--digital-red-600);
+  --dark-surface-tertiary: var(--digital-red-700);
+
+  --dark-border: var(--digital-red-400);
+  --dark-control: var(--digital-white-50);
+
+  /* Status Colors for Digital Studio */
+  --error: var(--digital-red-300);
+  --success: var(--digital-white-300);
+
+  --text-on-accent-primary: var(--digital-red-500);
+  --text-on-accent-secondary: var(--digital-white-50);
+
+  /* RGB variants for opacity support */
+--text-primary-rgb: var(--digital-white-rgb-50);
+--text-secondary-rgb: var(--digital-white-rgb-200);
+--text-tertiary-rgb: var(--digital-white-rgb-100);
+
+--surface-primary-rgb: var(--digital-red-rgb-500);
+--surface-secondary-rgb: var(--digital-red-rgb-600);
+--surface-tertiary-rgb: var(--digital-red-rgb-700);
+
+--border-rgb: var(--digital-red-rgb-400);
+--control-rgb: var(--digital-white-rgb-50);
+
+--dark-text-primary-rgb: var(--digital-white-rgb-50);
+--dark-text-secondary-rgb: var(--digital-white-rgb-200);
+--dark-text-tertiary-rgb: var(--digital-white-rgb-100);
+
+  --dark-surface-primary-rgb: var(--digital-red-rgb-500);
+  --dark-surface-secondary-rgb: var(--digital-red-rgb-600);
+  --dark-surface-tertiary-rgb: var(--digital-red-rgb-700);
+
+  --dark-border-rgb: var(--digital-red-rgb-400);
+  --dark-control-rgb: var(--digital-white-rgb-50);
+
+  /* Status Colors RGB */
+  --error-rgb: var(--digital-red-rgb-300);
+  --success-rgb: var(--digital-white-rgb-300);
+
+  /* Text on Accent RGB */
+  --text-on-accent-primary-rgb: var(--digital-red-rgb-500);
+  --text-on-accent-secondary-rgb: var(--digital-white-rgb-50);
+}
+
+/* Digital Studio Theme Global Override - High Specificity */
+html.digital-studio {
+  color: var(--digital-white-50) !important;
+  background-color: var(--digital-red-500) !important;
+}
+
+/* Fix email placeholder visibility in digital theme */
+html.digital-studio input::placeholder,
+html.digital-studio input[placeholder*="email"],
+html.digital-studio input[placeholder*="Email"] {
+  color: var(--digital-white-700) !important;
+  opacity: 1 !important;
+  font-weight: 500 !important;
+}
+
+/* Remove white background from footer contact section */
+html.digital-studio footer {
+  background-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio footer * {
+  background-color: var(--digital-red-500) !important;
+}
+
+/* Ensure footer text is visible */
+html.digital-studio footer .text-\[--text-tertiary\],
+html.digital-studio footer .text-\[--dark-text-tertiary\] {
+  color: var(--digital-white-200) !important;
+}
+
+html.digital-studio footer .text-\[--text-primary\],
+html.digital-studio footer .text-\[--dark-text-primary\] {
+  color: var(--digital-white-50) !important;
+}
+
+/* Ensure footer links don't have white backgrounds */
+html.digital-studio footer a,
+html.digital-studio footer a[href="/pricing"] {
+  background-color: transparent !important;
+  color: var(--digital-white-50) !important;
+}
+
+html.digital-studio footer a:hover,
+html.digital-studio footer a[href="/pricing"]:hover {
+  background-color: transparent !important;
+  color: var(--digital-white-200) !important;
+}
+
+html.digital-studio body {
+  color: var(--digital-white-50) !important;
+  background-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio * {
+  border-color: var(--digital-red-400) !important;
+}
+
+html.digital-studio .bg-background {
+  background-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .text-foreground {
+  color: var(--digital-white-50) !important;
+}
+
+html.digital-studio .bg-card {
+  background-color: var(--digital-red-600) !important;
+}
+
+html.digital-studio .text-card-foreground {
+  color: var(--digital-white-50) !important;
+}
+
+html.digital-studio .bg-primary {
+  background-color: var(--digital-white-50) !important;
+}
+
+html.digital-studio .text-primary {
+  color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .bg-secondary {
+  background-color: var(--digital-red-600) !important;
+}
+
+html.digital-studio .text-secondary {
+  color: var(--digital-white-50) !important;
+}
+
+html.digital-studio .border-border {
+  border-color: var(--digital-red-400) !important;
+}
+
+html.digital-studio .bg-muted {
+  background-color: var(--digital-red-700) !important;
+}
+
+html.digital-studio .text-muted-foreground {
+  color: var(--digital-white-200) !important;
+}
+
+/* Layout-specific overrides for digital-studio theme */
+html.digital-studio .bg-\[--surface-primary\] {
+  background-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .text-\[--text-primary\] {
+  color: var(--digital-white-50) !important;
+}
+
+html.digital-studio .dark\:bg-\[--dark-surface-primary\] {
+  background-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .dark\:text-\[--dark-text-primary\] {
+  color: var(--digital-white-50) !important;
+}
+
+/* Additional component overrides */
+html.digital-studio .bg-white {
+  background-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .text-black,
+html.digital-studio .text-gray-900,
+html.digital-studio .text-gray-800,
+html.digital-studio .text-gray-700 {
+  color: var(--digital-white-50) !important;
+}
+
+html.digital-studio .bg-gray-50,
+html.digital-studio .bg-gray-100 {
+  background-color: var(--digital-red-600) !important;
+}
+
+html.digital-studio .border-gray-200,
+html.digital-studio .border-gray-300 {
+  border-color: var(--digital-red-400) !important;
+}
+
+/* Header and navigation overrides */
+html.digital-studio header {
+  background-color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-400) !important;
+}
+
+html.digital-studio .border-\[--border\] {
+  border-color: var(--digital-red-400) !important;
+}
+
+html.digital-studio .dark\:border-\[--dark-border\] {
+  border-color: var(--digital-red-400) !important;
+}
+
+/* Button overrides */
+html.digital-studio .bg-purple-600,
+html.digital-studio .bg-purple-700,
+html.digital-studio .bg-indigo-600,
+html.digital-studio .bg-blue-600 {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .text-purple-600,
+html.digital-studio .text-purple-700,
+html.digital-studio .text-indigo-600,
+html.digital-studio .text-blue-600 {
+  color: var(--digital-red-500) !important;
+}
+
+/* Filter button overrides */
+html.digital-studio .bg-red-600 {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .text-red-600 {
+  color: var(--digital-white-50) !important;
+}
+
+/* Card overrides */
+html.digital-studio .bg-blue-600,
+html.digital-studio .bg-yellow-400 {
+  background-color: var(--digital-red-600) !important;
+}
+
+/* Get Started and Pricing button overrides */
+html.digital-studio a[href="/contact"],
+html.digital-studio a[href*="contact"],
+html.digital-studio a[href="/pricing"],
+html.digital-studio a[href*="pricing"] {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Button hover states */
+html.digital-studio .hover\:bg-indigo-700:hover,
+html.digital-studio .hover\:bg-blue-700:hover,
+html.digital-studio .hover\:bg-purple-700:hover {
+  background-color: var(--digital-red-600) !important;
+  color: var(--digital-white-50) !important;
+}
+
+/* Secondary button (Login) styling */
+html.digital-studio .border-indigo-600,
+html.digital-studio .border-blue-600,
+html.digital-studio .border-purple-600 {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .hover\:bg-indigo-50:hover,
+html.digital-studio .hover\:bg-blue-50:hover,
+html.digital-studio .hover\:bg-purple-50:hover {
+  background-color: var(--digital-white-100) !important;
+  color: var(--digital-red-500) !important;
+}
+
+/* Hero section bluish glow to white - EXCEPT hero title */
+html.digital-studio .hero-section::after,
+html.digital-studio .hero-section::before,
+html.digital-studio [class*="hero"]::after,
+html.digital-studio [class*="hero"]::before,
+html.digital-studio .hero-glow,
+html.digital-studio .glow-effect {
+  background: linear-gradient(to top, var(--digital-white-50), transparent) !important;
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+}
+
+/* Keep gradient styling ONLY for hero title */
+html.digital-studio .hero-section h1,
+html.digital-studio [class*="hero"] h1 {
+  background: linear-gradient(to top, var(--digital-white-50), transparent) !important;
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+}
+
+/* Box shadow and glow effects */
+html.digital-studio .shadow-blue-500,
+html.digital-studio .shadow-indigo-500,
+html.digital-studio .shadow-purple-500,
+html.digital-studio .shadow-lg,
+html.digital-studio .shadow-xl,
+html.digital-studio .shadow-2xl {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3) !important;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)) !important;
+}
+
+/* Hide light rays in digital-studio theme */
+html.digital-studio .custom-rays,
+html.digital-studio .light-rays,
+html.digital-studio .LightRays {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Hide the light rays container */
+html.digital-studio div[style*="position: absolute"][style*="top: 0"][style*="left: 0"] {
+  display: none !important;
+}
+
+/* Companies section - white background - SPECIFIC TARGETING */
+html.digital-studio .companies-section {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Companies section text color - using dark gray instead of red */
+html.digital-studio .companies-section h2 {
+  color: var(--digital-white-900) !important;
+}
+
+/* Override theme variables for Companies section */
+html.digital-studio .companies-section {
+  --surface-primary: var(--digital-white-50) !important;
+  --dark-surface-primary: var(--digital-white-50) !important;
+  --text-primary: var(--digital-white-900) !important;
+  --text-secondary: var(--digital-white-700) !important;
+  --text-tertiary: var(--digital-white-700) !important;
+  --dark-text-primary: var(--digital-white-900) !important;
+  --dark-text-secondary: var(--digital-white-700) !important;
+  --dark-text-tertiary: var(--digital-white-700) !important;
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Target the specific h2 in Companies section */
+html.digital-studio .companies-section h2.text-center {
+  color: var(--digital-white-900) !important;
+}
+
+/* Force white background on Companies section - more aggressive */
+html.digital-studio .companies-section,
+html.digital-studio .companies-section * {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Force dark gray text color on all companies section elements */
+html.digital-studio .companies-section * {
+  color: var(--digital-white-900) !important;
+}
+
+/* Override any inherited background colors */
+html.digital-studio .companies-section .Section {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Final aggressive override for Companies section */
+html.digital-studio .companies-section,
+html.digital-studio .companies-section section,
+html.digital-studio .companies-section div,
+html.digital-studio .companies-section .Section {
+  background-color: var(--digital-white-50) !important;
+  background: var(--digital-white-50) !important;
+}
+
+/* Navbar styling for digital-studio theme - COMPREHENSIVE */
+html.digital-studio header {
+  background-color: var(--digital-white-50) !important;
+  border-color: var(--digital-white-300) !important;
+}
+
+html.digital-studio header div {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Target all navbar containers and elements */
+html.digital-studio header *,
+html.digital-studio header .container,
+html.digital-studio header .grid,
+html.digital-studio header .flex {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Navbar text color - using dark gray instead of red */
+html.digital-studio header span,
+html.digital-studio header a,
+html.digital-studio header button {
+  color: var(--digital-white-900) !important;
+}
+
+/* Logo replacement for digital-studio theme */
+html.digital-studio header img[src*="logo.png"],
+html.digital-studio header img[src*="logo1.png"] {
+  content: url("/logor.png") !important;
+  src: url("/logor.png") !important;
+}
+
+/* Force logo replacement using CSS */
+html.digital-studio header .DarkLightImageAutoscale img,
+html.digital-studio header .DarkLightImage img {
+  content: url("/logor.png") !important;
+}
+
+/* Override any inherited background colors in navbar */
+html.digital-studio header,
+html.digital-studio header * {
+  background: var(--digital-white-50) !important;
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Specific navbar button styling - switched positions */
+html.digital-studio header .ButtonLink,
+html.digital-studio header button,
+html.digital-studio header a[href="/get-started"] {
+  background-color: var(--digital-red-500) !important;
+  color: var(--digital-white-50) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio header a[href="/pricing"] {
+  background-color: transparent !important;
+  color: var(--digital-white-900) !important;
+  border-color: transparent !important;
+}
+
+/* Secondary navbar buttons (Login) */
+html.digital-studio header .border-indigo-600,
+html.digital-studio header .border-blue-600,
+html.digital-studio header .border-purple-600,
+html.digital-studio header a[href="/login"] {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Navbar button hover states */
+html.digital-studio header .ButtonLink:hover,
+html.digital-studio header button:hover,
+html.digital-studio header a[href="/get-started"]:hover {
+  background-color: var(--digital-red-600) !important;
+  color: var(--digital-white-50) !important;
+}
+
+html.digital-studio header a[href="/pricing"]:hover {
+  background-color: var(--digital-white-100) !important;
+  color: var(--digital-white-900) !important;
+}
+
+html.digital-studio header .border-indigo-600:hover,
+html.digital-studio header .border-blue-600:hover,
+html.digital-studio header .border-purple-600:hover,
+html.digital-studio header a[href="/login"]:hover {
+  background-color: var(--digital-white-100) !important;
+  color: var(--digital-red-500) !important;
+}
+
+/* Big Feature Component - white background - SPECIFIC TARGETING */
+html.digital-studio .big-feature-section {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Big Feature Component text color - using dark gray instead of red */
+html.digital-studio .big-feature-section h1,
+html.digital-studio .big-feature-section h2,
+html.digital-studio .big-feature-section h3,
+html.digital-studio .big-feature-section h4,
+html.digital-studio .big-feature-section h5,
+html.digital-studio .big-feature-section p {
+  color: var(--digital-white-900) !important;
+}
+
+/* Override theme variables for Big Feature Component */
+html.digital-studio .big-feature-section {
+  --surface-primary: var(--digital-white-50) !important;
+  --dark-surface-primary: var(--digital-white-50) !important;
+  --text-primary: var(--digital-white-900) !important;
+  --text-secondary: var(--digital-white-700) !important;
+  --text-tertiary: var(--digital-white-700) !important;
+  --dark-text-primary: var(--digital-white-900) !important;
+  --dark-text-secondary: var(--digital-white-700) !important;
+  --dark-text-tertiary: var(--digital-white-700) !important;
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Force white background on Big Feature Component */
+html.digital-studio .big-feature-section,
+html.digital-studio .big-feature-section * {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Force dark gray text color on all big feature section elements */
+html.digital-studio .big-feature-section * {
+  color: var(--digital-white-900) !important;
+}
+
+/* Make side spaces white in BigFeature section */
+html.digital-studio .big-feature-section .Section {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Target container and grid elements to ensure full width coverage */
+html.digital-studio .big-feature-section .container,
+html.digital-studio .big-feature-section .grid,
+html.digital-studio .big-feature-section .flex {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Ensure the entire section area is white */
+html.digital-studio .big-feature-section section,
+html.digital-studio .big-feature-section div {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Testimonials section - white background */
+html.digital-studio .testimonials-section {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Testimonials section text color - using dark gray instead of red */
+html.digital-studio .testimonials-section h1,
+html.digital-studio .testimonials-section h2,
+html.digital-studio .testimonials-section h3,
+html.digital-studio .testimonials-section h4,
+html.digital-studio .testimonials-section h5,
+html.digital-studio .testimonials-section p,
+html.digital-studio .testimonials-section span,
+html.digital-studio .testimonials-section div {
+  color: var(--digital-white-900) !important;
+}
+
+/* Override theme variables for Testimonials section */
+html.digital-studio .testimonials-section {
+  --surface-primary: var(--digital-white-50) !important;
+  --dark-surface-primary: var(--digital-white-50) !important;
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Force white background on Testimonials section */
+html.digital-studio .testimonials-section,
+html.digital-studio .testimonials-section * {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Target the Section wrapper within Testimonials */
+html.digital-studio .testimonials-section .Section {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Testimonials Grid section - white background */
+html.digital-studio .testimonials-grid-section {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Testimonials Grid section text color - using dark gray instead of red */
+html.digital-studio .testimonials-grid-section h1,
+html.digital-studio .testimonials-grid-section h2,
+html.digital-studio .testimonials-grid-section h3,
+html.digital-studio .testimonials-grid-section h4,
+html.digital-studio .testimonials-grid-section h5,
+html.digital-studio .testimonials-grid-section p {
+  color: var(--digital-white-900) !important;
+}
+
+/* Override theme variables for Testimonials Grid section */
+html.digital-studio .testimonials-grid-section {
+  --surface-primary: var(--digital-white-50) !important;
+  --dark-surface-primary: var(--digital-white-50) !important;
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Force white background on Testimonials Grid section */
+html.digital-studio .testimonials-grid-section,
+html.digital-studio .testimonials-grid-section * {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Additional aggressive targeting for testimonials */
+html.digital-studio [class*="testimonial"] {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Target testimonials by component type */
+html.digital-studio .TestimonialSliderComponent {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Force white background on all testimonials-related elements */
+html.digital-studio .relative.overflow-clip {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Force dark gray text color on all testimonials text elements */
+html.digital-studio .testimonials-section *,
+html.digital-studio .testimonials-grid-section *,
+html.digital-studio [class*="testimonial"] * {
+  color: var(--digital-white-900) !important;
+}
+
+/* Target specific testimonial text classes */
+html.digital-studio .testimonials-section .text-\[--text-primary\],
+html.digital-studio .testimonials-section .text-\[--dark-text-primary\],
+html.digital-studio .testimonials-section .text-\[--text-tertiary\],
+html.digital-studio .testimonials-section .text-\[--dark-text-tertiary\] {
+  color: var(--digital-white-900) !important;
+}
+
+/* Target blockquote and testimonial content */
+html.digital-studio .testimonials-section blockquote,
+html.digital-studio .testimonials-section h5,
+html.digital-studio .testimonials-section p {
+  color: var(--digital-white-900) !important;
+}
+
+/* Target the embla carousel slides */
+html.digital-studio .embla__slide * {
+  color: var(--digital-white-900) !important;
+}
+
+/* Override CSS custom properties for testimonials */
+html.digital-studio .testimonials-section {
+  --text-primary: var(--digital-white-900) !important;
+  --text-secondary: var(--digital-white-700) !important;
+  --text-tertiary: var(--digital-white-700) !important;
+  --dark-text-primary: var(--digital-white-900) !important;
+  --dark-text-secondary: var(--digital-white-700) !important;
+  --dark-text-tertiary: var(--digital-white-700) !important;
+}
+
+/* Pricing Section - Light mode styling with dark gray text */
+html.digital-studio .pricing-section {
+  background-color: var(--digital-white-50) !important;
+  --surface-primary: var(--digital-white-50) !important;
+  --surface-secondary: var(--digital-white-100) !important;
+  --surface-tertiary: var(--digital-white-200) !important;
+  --dark-surface-primary: var(--digital-white-50) !important;
+  --dark-surface-secondary: var(--digital-white-100) !important;
+  --dark-surface-tertiary: var(--digital-white-200) !important;
+  --border: var(--digital-white-300) !important;
+  --dark-border: var(--digital-white-300) !important;
+  --text-primary: var(--digital-white-900) !important;
+  --text-secondary: var(--digital-white-700) !important;
+  --text-tertiary: var(--digital-white-700) !important;
+  --dark-text-primary: var(--digital-white-900) !important;
+  --dark-text-secondary: var(--digital-white-700) !important;
+  --dark-text-tertiary: var(--digital-white-700) !important;
+}
+
+/* Pricing Table Section - Light mode styling with dark gray text */
+html.digital-studio .pricing-table-section {
+  background-color: var(--digital-white-50) !important;
+  --surface-primary: var(--digital-white-50) !important;
+  --surface-secondary: var(--digital-white-100) !important;
+  --surface-tertiary: var(--digital-white-200) !important;
+  --dark-surface-primary: var(--digital-white-50) !important;
+  --dark-surface-secondary: var(--digital-white-100) !important;
+  --dark-surface-tertiary: var(--digital-white-200) !important;
+  --border: var(--digital-white-300) !important;
+  --dark-border: var(--digital-white-300) !important;
+  --text-primary: var(--digital-white-900) !important;
+  --text-secondary: var(--digital-white-700) !important;
+  --text-tertiary: var(--digital-white-700) !important;
+  --dark-text-primary: var(--digital-white-900) !important;
+  --dark-text-secondary: var(--digital-white-700) !important;
+  --dark-text-tertiary: var(--digital-white-700) !important;
+}
+
+/* Blog Section - Light mode styling with dark gray text */
+html.digital-studio .blog-section {
+  background-color: var(--digital-white-50) !important;
+  --surface-primary: var(--digital-white-50) !important;
+  --surface-secondary: var(--digital-white-100) !important;
+  --surface-tertiary: var(--digital-white-200) !important;
+  --dark-surface-primary: var(--digital-white-50) !important;
+  --dark-surface-secondary: var(--digital-white-100) !important;
+  --dark-surface-tertiary: var(--digital-white-200) !important;
+  --border: var(--digital-white-300) !important;
+  --dark-border: var(--digital-white-300) !important;
+  --text-primary: var(--digital-white-900) !important;
+  --text-secondary: var(--digital-white-700) !important;
+  --text-tertiary: var(--digital-white-700) !important;
+  --dark-text-primary: var(--digital-white-900) !important;
+  --dark-text-secondary: var(--digital-white-700) !important;
+  --dark-text-tertiary: var(--digital-white-700) !important;
+}
+
+/* Blog card specific styling */
+html.digital-studio .blog-section article,
+html.digital-studio .blog-section .card,
+html.digital-studio .blog-section .blog-card {
+  background-color: var(--digital-white-50) !important;
+  border-color: var(--digital-white-300) !important;
+}
+
+/* Blog card button styling */
+html.digital-studio .blog-section article .ButtonLink,
+html.digital-studio .blog-section article button,
+html.digital-studio .blog-section article a,
+html.digital-studio .blog-section .card .ButtonLink,
+html.digital-studio .blog-section .card button,
+html.digital-studio .blog-section .card a,
+html.digital-studio .blog-section .blog-card .ButtonLink,
+html.digital-studio .blog-section .blog-card button,
+html.digital-studio .blog-section .blog-card a {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Blog card button hover states */
+html.digital-studio .blog-section article .ButtonLink:hover,
+html.digital-studio .blog-section article button:hover,
+html.digital-studio .blog-section article a:hover,
+html.digital-studio .blog-section .card .ButtonLink:hover,
+html.digital-studio .blog-section .card button:hover,
+html.digital-studio .blog-section .card a:hover,
+html.digital-studio .blog-section .blog-card .ButtonLink:hover,
+html.digital-studio .blog-section .blog-card button:hover,
+html.digital-studio .blog-section .blog-card a:hover {
+  background-color: var(--digital-white-100) !important;
+  color: var(--digital-red-500) !important;
+}
+
+/* Force white background on pricing and blog sections */
+html.digital-studio .pricing-section,
+html.digital-studio .pricing-section *,
+html.digital-studio .pricing-table-section,
+html.digital-studio .pricing-table-section *,
+html.digital-studio .blog-section,
+html.digital-studio .blog-section * {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Additional blog button targeting */
+html.digital-studio .blog-section .bg-blue-600,
+html.digital-studio .blog-section .bg-indigo-600,
+html.digital-studio .blog-section .bg-purple-600,
+html.digital-studio .blog-section .bg-gray-600 {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Blog section specific button text colors */
+html.digital-studio .blog-section .text-blue-600,
+html.digital-studio .blog-section .text-indigo-600,
+html.digital-studio .blog-section .text-purple-600,
+html.digital-studio .blog-section .text-gray-600 {
+  color: var(--digital-red-500) !important;
+}
+
+/* Force dark gray text color on pricing and blog sections */
+html.digital-studio .pricing-section h1,
+html.digital-studio .pricing-section h2,
+html.digital-studio .pricing-section h3,
+html.digital-studio .pricing-section h4,
+html.digital-studio .pricing-section h5,
+html.digital-studio .pricing-section p,
+html.digital-studio .pricing-section span,
+html.digital-studio .pricing-section div,
+html.digital-studio .pricing-table-section h1,
+html.digital-studio .pricing-table-section h2,
+html.digital-studio .pricing-table-section h3,
+html.digital-studio .pricing-table-section h4,
+html.digital-studio .pricing-table-section h5,
+html.digital-studio .pricing-table-section p,
+html.digital-studio .pricing-table-section span,
+html.digital-studio .pricing-table-section div,
+html.digital-studio .blog-section h1,
+html.digital-studio .blog-section h2,
+html.digital-studio .blog-section h3,
+html.digital-studio .blog-section h4,
+html.digital-studio .blog-section h5,
+html.digital-studio .blog-section p,
+html.digital-studio .blog-section span,
+html.digital-studio .blog-section div {
+  color: var(--digital-white-900) !important;
+}
+
+/* Override specific pricing card styling */
+html.digital-studio .pricing-section article {
+  background-color: var(--digital-white-50) !important;
+  border-color: var(--digital-white-300) !important;
+}
+
+/* Override blog card styling */
+html.digital-studio .blog-section .bg-gray-50,
+html.digital-studio .blog-section .dark\:bg-gray-950 {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Override blog text colors */
+html.digital-studio .blog-section .text-gray-900,
+html.digital-studio .blog-section .text-gray-600,
+html.digital-studio .blog-section .dark\:text-white,
+html.digital-studio .blog-section .dark\:text-gray-400 {
+  color: var(--digital-white-900) !important;
+}
+
+/* Blog section button styling */
+html.digital-studio .blog-section .ButtonLink,
+html.digital-studio .blog-section button,
+html.digital-studio .blog-section a[href*="blog"],
+html.digital-studio .blog-section a[href*="read"],
+html.digital-studio .blog-section a[href*="more"] {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Blog section button hover states */
+html.digital-studio .blog-section .ButtonLink:hover,
+html.digital-studio .blog-section button:hover,
+html.digital-studio .blog-section a[href*="blog"]:hover,
+html.digital-studio .blog-section a[href*="read"]:hover,
+html.digital-studio .blog-section a[href*="more"]:hover {
+  background-color: var(--digital-white-100) !important;
+  color: var(--digital-red-500) !important;
+}
+
+/* Blog category styling with red borders */
+html.digital-studio .blog-section .badge,
+html.digital-studio .blog-section .tag,
+html.digital-studio .blog-section .category,
+html.digital-studio .blog-section [class*="badge"],
+html.digital-studio .blog-section [class*="tag"],
+html.digital-studio .blog-section [class*="category"],
+html.digital-studio .blog-section .bg-blue-100,
+html.digital-studio .blog-section .bg-indigo-100,
+html.digital-studio .blog-section .bg-purple-100,
+html.digital-studio .blog-section .bg-gray-100 {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border: 1px solid var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* General category styling with borders (for all sections) */
+.badge,
+.tag,
+.category,
+[class*="badge"],
+[class*="tag"],
+[class*="category"],
+.bg-blue-100,
+.bg-indigo-100,
+.bg-purple-100,
+.bg-gray-100 {
+  border: 1px solid var(--grayscale-300) !important;
+}
+
+/* Delete button styling - make it more visible */
+button.text-red-600,
+button.hover\:text-red-700,
+button[class*="text-red"],
+button[class*="red"],
+.btn-delete,
+.delete-btn {
+  color: var(--grayscale-900) !important;
+  background-color: var(--grayscale-100) !important;
+  border-color: var(--grayscale-300) !important;
+}
+
+button.text-red-600:hover,
+button.hover\:text-red-700:hover,
+button[class*="text-red"]:hover,
+button[class*="red"]:hover,
+.btn-delete:hover,
+.delete-btn:hover {
+  color: var(--grayscale-900) !important;
+  background-color: var(--grayscale-200) !important;
+  border-color: var(--grayscale-400) !important;
+}
+
+/* Digital theme specific delete button styling */
+html.digital-studio button.text-red-600,
+html.digital-studio button.hover\:text-red-700,
+html.digital-studio button[class*="text-red"],
+html.digital-studio button[class*="red"],
+html.digital-studio .btn-delete,
+html.digital-studio .delete-btn {
+  color: var(--digital-white-900) !important;
+  background-color: var(--digital-white-100) !important;
+  border-color: var(--digital-white-300) !important;
+}
+
+html.digital-studio button.text-red-600:hover,
+html.digital-studio button.hover\:text-red-700:hover,
+html.digital-studio button[class*="text-red"]:hover,
+html.digital-studio button[class*="red"]:hover,
+html.digital-studio .btn-delete:hover,
+html.digital-studio .delete-btn:hover {
+  color: var(--digital-white-900) !important;
+  background-color: var(--digital-white-200) !important;
+  border-color: var(--digital-white-400) !important;
+}
+
+/* Blog category hover states */
+html.digital-studio .blog-section .badge:hover,
+html.digital-studio .blog-section .tag:hover,
+html.digital-studio .blog-section .category:hover,
+html.digital-studio .blog-section [class*="badge"]:hover,
+html.digital-studio .blog-section [class*="tag"]:hover,
+html.digital-studio .blog-section [class*="category"]:hover,
+html.digital-studio .blog-section .bg-blue-100:hover,
+html.digital-studio .blog-section .bg-indigo-100:hover,
+html.digital-studio .blog-section .bg-purple-100:hover,
+html.digital-studio .blog-section .bg-gray-100:hover {
+  background-color: var(--digital-red-500) !important;
+  color: var(--digital-white-50) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Make pricing sections fullscreen to eliminate red sidebars */
+html.digital-studio .pricing-section,
+html.digital-studio .pricing-table-section {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure pricing section content is centered */
+html.digital-studio .pricing-section .Section,
+html.digital-studio .pricing-table-section .Section {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+/* Pricing card button styling - Middle card (primary) */
+html.digital-studio .pricing-section .ButtonLink[data-intent="primary"],
+html.digital-studio .pricing-section button[data-intent="primary"],
+html.digital-studio .pricing-section .intent-primary {
+  background-color: var(--digital-red-500) !important;
+  color: var(--digital-white-50) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Pricing card button styling - Side cards (secondary) */
+html.digital-studio .pricing-section .ButtonLink[data-intent="secondary"],
+html.digital-studio .pricing-section button[data-intent="secondary"],
+html.digital-studio .pricing-section .intent-secondary {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Target buttons by their position in the flex container */
+html.digital-studio .pricing-section .flex > article:nth-child(1) .ButtonLink,
+html.digital-studio .pricing-section .flex > article:nth-child(3) .ButtonLink {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .pricing-section .flex > article:nth-child(2) .ButtonLink {
+  background-color: var(--digital-red-500) !important;
+  color: var(--digital-white-50) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* More aggressive targeting for all button elements */
+html.digital-studio .pricing-section article:nth-child(1) button,
+html.digital-studio .pricing-section article:nth-child(1) .ButtonLink,
+html.digital-studio .pricing-section article:nth-child(1) a[href="/sign-up"] {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .pricing-section article:nth-child(2) button,
+html.digital-studio .pricing-section article:nth-child(2) .ButtonLink,
+html.digital-studio .pricing-section article:nth-child(2) a[href="/sign-up"] {
+  background-color: var(--digital-red-500) !important;
+  color: var(--digital-white-50) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .pricing-section article:nth-child(3) button,
+html.digital-studio .pricing-section article:nth-child(3) .ButtonLink,
+html.digital-studio .pricing-section article:nth-child(3) a[href="/sign-up"] {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Force text color on all button text */
+html.digital-studio .pricing-section article:nth-child(1) button *,
+html.digital-studio .pricing-section article:nth-child(1) .ButtonLink *,
+html.digital-studio .pricing-section article:nth-child(3) button *,
+html.digital-studio .pricing-section article:nth-child(3) .ButtonLink * {
+  color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .pricing-section article:nth-child(2) button *,
+html.digital-studio .pricing-section article:nth-child(2) .ButtonLink * {
+  color: var(--digital-white-50) !important;
+}
+
+/* Preserve red color for "Get Started" buttons specifically */
+html.digital-studio .pricing-section button:contains("Get Started"),
+html.digital-studio .pricing-section .ButtonLink:contains("Get Started"),
+html.digital-studio .pricing-section a:contains("Get Started"),
+html.digital-studio .pricing-section [data-intent="primary"] {
+  color: var(--digital-red-500) !important;
+}
+
+html.digital-studio .pricing-section [data-intent="primary"] * {
+  color: var(--digital-red-500) !important;
+}
+
+/* Ensure middle card (primary) button text stays white */
+html.digital-studio .pricing-section article:nth-child(2) [data-intent="primary"],
+html.digital-studio .pricing-section article:nth-child(2) [data-intent="primary"] * {
+  color: var(--digital-white-50) !important;
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Admin and Login pages - Force light mode theme in digital-studio */
+html.digital-studio body[data-page="admin"],
+html.digital-studio body[data-page="login"],
+html.digital-studio [data-page="admin"],
+html.digital-studio [data-page="login"] {
+  background-color: var(--grayscale-50) !important;
+  color: var(--grayscale-900) !important;
+}
+
+/* Admin page specific overrides */
+html.digital-studio [data-page="admin"] *,
+html.digital-studio [data-page="admin"] .bg-background,
+html.digital-studio [data-page="admin"] .bg-card,
+html.digital-studio [data-page="admin"] .bg-primary,
+html.digital-studio [data-page="admin"] .bg-secondary,
+html.digital-studio [data-page="admin"] .bg-muted {
+  background-color: var(--grayscale-50) !important;
+}
+
+html.digital-studio [data-page="admin"] .text-foreground,
+html.digital-studio [data-page="admin"] .text-card-foreground,
+html.digital-studio [data-page="admin"] .text-primary,
+html.digital-studio [data-page="admin"] .text-secondary,
+html.digital-studio [data-page="admin"] .text-muted-foreground {
+  color: var(--grayscale-900) !important;
+}
+
+html.digital-studio [data-page="admin"] .border-border,
+html.digital-studio [data-page="admin"] .border {
+  border-color: var(--grayscale-300) !important;
+}
+
+/* Login page specific overrides */
+html.digital-studio [data-page="login"] *,
+html.digital-studio [data-page="login"] .bg-background,
+html.digital-studio [data-page="login"] .bg-card,
+html.digital-studio [data-page="login"] .bg-primary,
+html.digital-studio [data-page="login"] .bg-secondary,
+html.digital-studio [data-page="login"] .bg-muted {
+  background-color: var(--grayscale-50) !important;
+}
+
+html.digital-studio [data-page="login"] .text-foreground,
+html.digital-studio [data-page="login"] .text-card-foreground,
+html.digital-studio [data-page="login"] .text-primary,
+html.digital-studio [data-page="login"] .text-secondary,
+html.digital-studio [data-page="login"] .text-muted-foreground {
+  color: var(--grayscale-900) !important;
+}
+
+html.digital-studio [data-page="login"] .border-border,
+html.digital-studio [data-page="login"] .border {
+  border-color: var(--grayscale-300) !important;
+}
+
+/* Button overrides for admin and login pages */
+html.digital-studio [data-page="admin"] .bg-blue-600,
+html.digital-studio [data-page="admin"] .bg-indigo-600,
+html.digital-studio [data-page="admin"] .bg-purple-600,
+html.digital-studio [data-page="login"] .bg-blue-600,
+html.digital-studio [data-page="login"] .bg-indigo-600,
+html.digital-studio [data-page="login"] .bg-purple-600 {
+  background-color: var(--accent-500) !important;
+  color: white !important;
+}
+
+html.digital-studio [data-page="admin"] .text-blue-600,
+html.digital-studio [data-page="admin"] .text-indigo-600,
+html.digital-studio [data-page="admin"] .text-purple-600,
+html.digital-studio [data-page="login"] .text-blue-600,
+html.digital-studio [data-page="login"] .text-indigo-600,
+html.digital-studio [data-page="login"] .text-purple-600 {
+  color: var(--accent-500) !important;
+}
+
+/* Input field overrides for admin and login pages */
+html.digital-studio [data-page="admin"] input,
+html.digital-studio [data-page="admin"] textarea,
+html.digital-studio [data-page="login"] input,
+html.digital-studio [data-page="login"] textarea {
+  background-color: white !important;
+  color: var(--grayscale-900) !important;
+  border-color: var(--grayscale-300) !important;
+}
+
+html.digital-studio [data-page="admin"] input::placeholder,
+html.digital-studio [data-page="admin"] textarea::placeholder,
+html.digital-studio [data-page="login"] input::placeholder,
+html.digital-studio [data-page="login"] textarea::placeholder {
+  color: var(--grayscale-500) !important;
+}
+
+/* Get Started page styling - force white background and red accents */
+html.digital-studio [data-page="get-started"] {
+  background-color: white !important;
+  color: var(--grayscale-900) !important;
+}
+
+html.digital-studio [data-page="get-started"] * {
+  background-color: white !important;
+  color: var(--grayscale-900) !important;
+}
+
+html.digital-studio [data-page="get-started"] .bg-red-500 {
+  background-color: #ef4444 !important;
+}
+
+html.digital-studio [data-page="get-started"] .hover\:bg-red-600:hover {
+  background-color: #dc2626 !important;
+}
+
+html.digital-studio [data-page="get-started"] .text-red-500 {
+  color: #ef4444 !important;
+}
+
+html.digital-studio [data-page="get-started"] .focus\:border-red-500:focus {
+  border-color: #ef4444 !important;
+}
+
+html.digital-studio [data-page="get-started"] .focus\:ring-red-500:focus {
+  --tw-ring-color: #ef4444 !important;
+}
+
+/* Force white text on submit button */
+html.digital-studio [data-page="get-started"] button[type="submit"],
+html.digital-studio [data-page="get-started"] .bg-red-500 {
+  color: white !important;
+}
+
+html.digital-studio [data-page="get-started"] button[type="submit"] *,
+html.digital-studio [data-page="get-started"] .bg-red-500 * {
+  color: white !important;
+}
+
+/* Fix placeholder visibility in Get Started page */
+html.digital-studio [data-page="get-started"] input::placeholder,
+html.digital-studio [data-page="get-started"] textarea::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+  font-weight: 400 !important;
+}
+
+html.digital-studio [data-page="get-started"] input:focus::placeholder,
+html.digital-studio [data-page="get-started"] textarea:focus::placeholder {
+  color: #9ca3af !important;
+  opacity: 0.7 !important;
+}
+
+/* Blog page styling - white background with red accents only */
+html.digital-studio [data-page="blog"] {
+  background-color: white !important;
+  color: var(--grayscale-900) !important;
+}
+
+html.digital-studio [data-page="blog"] * {
+  background-color: white !important;
+  color: var(--grayscale-900) !important;
+}
+
+html.digital-studio [data-page="blog"] .bg-red-500,
+html.digital-studio [data-page="blog"] .bg-red-600 {
+  background-color: #ef4444 !important;
+}
+
+html.digital-studio [data-page="blog"] .text-red-500,
+html.digital-studio [data-page="blog"] .text-red-600 {
+  color: #ef4444 !important;
+}
+
+html.digital-studio [data-page="blog"] .border-red-500 {
+  border-color: #ef4444 !important;
+}
+
+html.digital-studio [data-page="blog"] .hover\:bg-red-600:hover {
+  background-color: #dc2626 !important;
+}
+
+html.digital-studio [data-page="blog"] .hover\:text-red-600:hover {
+  color: #dc2626 !important;
+}
+
+/* Blog page placeholder text */
+html.digital-studio [data-page="blog"] input::placeholder,
+html.digital-studio [data-page="blog"] textarea::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+/* Portfolio/Case Studies page styling - white background with red accents only */
+html.digital-studio [data-page="portfolio"] {
+  background-color: white !important;
+  color: var(--grayscale-900) !important;
+}
+
+html.digital-studio [data-page="portfolio"] * {
+  background-color: white !important;
+  color: var(--grayscale-900) !important;
+}
+
+html.digital-studio [data-page="portfolio"] .bg-red-500,
+html.digital-studio [data-page="portfolio"] .bg-red-600 {
+  background-color: #ef4444 !important;
+}
+
+html.digital-studio [data-page="portfolio"] .text-red-500,
+html.digital-studio [data-page="portfolio"] .text-red-600 {
+  color: #ef4444 !important;
+}
+
+html.digital-studio [data-page="portfolio"] .border-red-500 {
+  border-color: #ef4444 !important;
+}
+
+html.digital-studio [data-page="portfolio"] .hover\:bg-red-600:hover {
+  background-color: #dc2626 !important;
+}
+
+html.digital-studio [data-page="portfolio"] .hover\:text-red-600:hover {
+  color: #dc2626 !important;
+}
+
+/* Portfolio page placeholder text */
+html.digital-studio [data-page="portfolio"] input::placeholder,
+html.digital-studio [data-page="portfolio"] textarea::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+/* Start Project button styling - red background with white text */
+html.digital-studio [data-page="portfolio"] .start-project-btn,
+html.digital-studio [data-page="portfolio"] .start-project-btn * {
+  background-color: #ef4444 !important;
+  color: white !important;
+  border-color: #ef4444 !important;
+}
+
+html.digital-studio [data-page="portfolio"] .start-project-btn:hover,
+html.digital-studio [data-page="portfolio"] .start-project-btn:hover * {
+  background-color: #dc2626 !important;
+  color: white !important;
+}
+
+/* Mobile hamburger menu - red color */
+html.digital-studio button[aria-label="Toggle Menu"] {
+  color: #ef4444 !important;
+}
+
+html.digital-studio button[aria-label="Toggle Menu"] svg {
+  color: #ef4444 !important;
+}
+
+/* Testimonial subtitle text - not white */
+html.digital-studio .testimonials-section p[class*="text-[--text-tertiary]"],
+html.digital-studio .testimonials-section p[class*="text-lg"],
+html.digital-studio .testimonials-section .text-[--text-tertiary] {
+  color: var(--digital-white-900) !important;
+}
+
+/* Portfolio category filter buttons */
+html.digital-studio [data-page="portfolio"] .category-filter-btn {
+  border-width: 2px !important;
+}
+
+/* Inactive buttons - white background, red text, red border (like login button) */
+html.digital-studio [data-page="portfolio"] .category-inactive {
+  background-color: white !important;
+  color: #ef4444 !important;
+  border-color: #ef4444 !important;
+}
+
+/* Inactive buttons on hover - red background, white text */
+html.digital-studio [data-page="portfolio"] .category-inactive:hover {
+  background-color: #ef4444 !important;
+  color: white !important;
+  border-color: #ef4444 !important;
+}
+
+/* Active button - red background, white text */
+html.digital-studio [data-page="portfolio"] .category-active {
+  background-color: #ef4444 !important;
+  color: white !important;
+  border-color: #ef4444 !important;
 }

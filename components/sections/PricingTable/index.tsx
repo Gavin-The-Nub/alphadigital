@@ -13,7 +13,7 @@ export function PricingTable(props: any) {
   const plans = extractPlans(categories);
 
   return (
-    <Section className="xl:max-w-screen-xl" id="pricing">
+    <Section className="pricing-table-section" id="pricing">
       <Heading {...heading}>
         <h4>{heading.title}</h4>
       </Heading>

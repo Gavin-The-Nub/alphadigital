@@ -234,30 +234,8 @@ export default function CaseStudyPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
-      {/* Header */}
-      <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <ButtonLink
-              href="/portfolio"
-              intent="secondary"
-              size="sm"
-              className="flex items-center"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Portfolio
-            </ButtonLink>
-            <div className="flex items-center gap-4">
-              <Badge variant="outline">{caseStudy.category}</Badge>
-              {caseStudy.featured && (
-                <Badge className="bg-blue-600 text-white">Featured</Badge>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950" data-page="portfolio">
+     
       {/* Hero Section */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
@@ -405,7 +383,7 @@ export default function CaseStudyPage() {
               Let's discuss how we can help you achieve similar results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ButtonLink href="/contact" intent="primary" size="lg">
+              <ButtonLink href="/get-started" intent="primary" size="lg" className="start-project-btn">
                 Start a Project
               </ButtonLink>
               <ButtonLink href="/portfolio" intent="secondary" size="lg">

@@ -9,7 +9,7 @@ import s from "./Pricing/pricing.module.css";
 
 export function Pricing(pricing: any) {
   return (
-    <Section className="xl:max-w-screen-xl" id="pricing">
+    <Section className="pricing-section" id="pricing">
 
       <Heading {...pricing.heading}>
         <h4>{pricing.heading.title}</h4>

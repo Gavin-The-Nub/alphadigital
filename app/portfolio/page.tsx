@@ -171,7 +171,7 @@ export default function PortfolioPage() {
     : caseStudies.filter(cs => cs.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950" data-page="portfolio">
       {/* Hero Section */}
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
@@ -187,10 +187,10 @@ export default function PortfolioPage() {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
+                  className={`px-6 py-2 rounded-full text-sm font-medium transition-colors border-2 category-filter-btn ${
                     selectedCategory === category
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                      ? "category-active"
+                      : "category-inactive"
                   }`}
                 >
                   {category === "all" ? "All Projects" : category}
@@ -285,7 +285,7 @@ export default function PortfolioPage() {
               Let's discuss how we can help you achieve your digital goals and create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ButtonLink href="/contact" intent="primary" size="lg">
+              <ButtonLink href="/get-started" intent="primary" size="lg" className="start-project-btn">
                 Start a Project
               </ButtonLink>
               <ButtonLink href="/contact" intent="secondary" size="lg">

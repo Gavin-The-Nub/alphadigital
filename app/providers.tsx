@@ -4,7 +4,12 @@ import { TooltipProvider } from "@/components/common/tooltip";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider enableSystem attribute="class" defaultTheme="system">
+    <ThemeProvider 
+      enableSystem 
+      attribute="class" 
+      defaultTheme="system"
+      themes={["light", "dark", "digital-studio"]}
+    >
       <TooltipProvider>{children}</TooltipProvider>
     </ThemeProvider>
   );
