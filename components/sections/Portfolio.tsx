@@ -71,7 +71,7 @@ export default function Portfolio() {
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
               onClick={() => setSelectedCategory(category)}
-              className="text-sm capitalize"
+              className="text-sm capitalize hover:text-white"
             >
               {category}
             </Button>

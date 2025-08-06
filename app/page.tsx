@@ -70,7 +70,7 @@ const staticHomeContent = {
       actions: [
         {
           _id: "cta-1",
-          href: "/features",
+          href: "/get-started",
           label: "Get Started",  type: "secondary",
          
         },
@@ -247,7 +247,7 @@ const staticHomeContent = {
       actions: [
         {
           _id: "side-features-cta-1",
-          href: "/contact",
+          href: "/get-started",
           label: "Get Started",
           type: "primary",
         },
@@ -300,7 +300,7 @@ const staticHomeContent = {
             company: {
               _title: "TechCorp",
               image: {
-                url: "c1.png",
+                url: "c1.svg",
                 alt: "TechCorp",
               },
             },
@@ -320,7 +320,7 @@ const staticHomeContent = {
             company: {
               _title: "Startup",
               image: {
-                url: "c2.png",
+                url: "c2.svg",
                 alt: "Startup",
               },
             },
@@ -340,7 +340,7 @@ const staticHomeContent = {
             company: {
               _title: "NBA",
               image: {
-                url: "c4.png",
+                url: "c4.svg",
                 alt: "Startup",
               },
             },

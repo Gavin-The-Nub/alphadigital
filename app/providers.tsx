@@ -7,7 +7,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <ThemeProvider 
       enableSystem 
       attribute="class" 
-      defaultTheme="system"
+      defaultTheme="digital-studio"
       themes={["light", "dark", "digital-studio"]}
     >
       <TooltipProvider>{children}</TooltipProvider>

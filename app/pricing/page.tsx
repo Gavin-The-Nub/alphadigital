@@ -205,14 +205,7 @@ export default function PricingPage() {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-12">
-          <ButtonLink
-            variant="outline"
-            href="/"
-            className="mb-6 flex items-center gap-2"
-          >
-            <ArrowLeftIcon className="h-4 w-4" />
-            Back to Home
-          </ButtonLink>
+         
           
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">
@@ -297,9 +290,9 @@ export default function PricingPage() {
               {/* CTA Button */}
               <div className="mt-8 text-center">
                 <ButtonLink
-                  href="/contact"
+                  href="/get-started"
                   className="w-full"
-                  intent={tier.isPopular ? "primary" : "secondary"}
+                  data-intent={tier.isPopular ? "primary" : "secondary"}
                   size="lg"
                 >
                   Get started

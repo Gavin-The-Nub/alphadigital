@@ -65,7 +65,7 @@ function PricingCard(item: any) {
         ) : null}
         <ButtonLink
           className="z-10 w-full"
-          href="/sign-up"
+          href="/get-started"
           intent={item.isMostPopular ? "primary" : "secondary"}
           size="lg"
         >

@@ -768,14 +768,25 @@ html.digital-studio .bg-yellow-400 {
 }
 
 /* Get Started and Pricing button overrides */
-html.digital-studio a[href="/contact"],
-html.digital-studio a[href*="contact"],
-html.digital-studio a[href="/pricing"],
-html.digital-studio a[href*="pricing"] {
+
+html.digital-studio a[href*="/get-started"] {
   background-color: var(--digital-white-50) !important;
   color: var(--digital-red-500) !important;
   border-color: var(--digital-red-500) !important;
 }
+
+html.digital-studio a[href*="/pricing"] {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--digital-white-50) !important;
+  border-color: transparent !important;
+}
+html.digital-studio a[href*="/pricing"]:hover {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: var(--digital-white-50) !important;
+  border-color: transparent !important;
+}
+
+
 
 /* Button hover states */
 html.digital-studio .hover\:bg-indigo-700:hover,
@@ -979,7 +990,7 @@ html.digital-studio header a[href="/get-started"]:hover {
 
 html.digital-studio header a[href="/pricing"]:hover {
   background-color: var(--digital-white-100) !important;
-  color: var(--digital-white-900) !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 html.digital-studio header .border-indigo-600:hover,
@@ -1501,27 +1512,47 @@ html.digital-studio .pricing-section .flex > article:nth-child(2) .ButtonLink {
 /* More aggressive targeting for all button elements */
 html.digital-studio .pricing-section article:nth-child(1) button,
 html.digital-studio .pricing-section article:nth-child(1) .ButtonLink,
-html.digital-studio .pricing-section article:nth-child(1) a[href="/sign-up"] {
+html.digital-studio .pricing-section article:nth-child(1) a[href="/get-started"] {
   background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}html.digital-studio .pricing-section article:nth-child(1) button,
+html.digital-studio .pricing-section article:nth-child(1) .ButtonLink,
+html.digital-studio .pricing-section article:nth-child(1) a[href="/get-started"]:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
   color: var(--digital-red-500) !important;
   border-color: var(--digital-red-500) !important;
 }
 
 html.digital-studio .pricing-section article:nth-child(2) button,
 html.digital-studio .pricing-section article:nth-child(2) .ButtonLink,
-html.digital-studio .pricing-section article:nth-child(2) a[href="/sign-up"] {
+html.digital-studio .pricing-section article:nth-child(2) a[href="/get-started"] {
   background-color: var(--digital-red-500) !important;
+  color: var(--digital-white-50) !important;
+  border-color: var(--digital-red-500) !important;
+}html.digital-studio .pricing-section article:nth-child(2) button,
+html.digital-studio .pricing-section article:nth-child(2) .ButtonLink,
+html.digital-studio .pricing-section article:nth-child(2) a[href="/get-started"]:hover {
+  background-color: var(--digital-red-600) !important;
   color: var(--digital-white-50) !important;
   border-color: var(--digital-red-500) !important;
 }
 
 html.digital-studio .pricing-section article:nth-child(3) button,
 html.digital-studio .pricing-section article:nth-child(3) .ButtonLink,
-html.digital-studio .pricing-section article:nth-child(3) a[href="/sign-up"] {
+html.digital-studio .pricing-section article:nth-child(3) a[href="/get-started"] {
   background-color: var(--digital-white-50) !important;
   color: var(--digital-red-500) !important;
   border-color: var(--digital-red-500) !important;
 }
+html.digital-studio .pricing-section article:nth-child(3) button,
+html.digital-studio .pricing-section article:nth-child(3) .ButtonLink,
+html.digital-studio .pricing-section article:nth-child(3) a[href="/get-started"]:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
 
 /* Force text color on all button text */
 html.digital-studio .pricing-section article:nth-child(1) button *,
@@ -1574,6 +1605,48 @@ html.digital-studio .pricing-section article:nth-child(2) [data-intent="primary"
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+}
+
+
+/* Most Popular Get Started button - red background with white text */
+html.digital-studio .pricing-section .ButtonLink[data-intent="primary"],
+html.digital-studio .pricing-section a[href="/get-started"][data-intent="primary"],
+html.digital-studio [data-page="pricing"] .ButtonLink[data-intent="primary"],
+html.digital-studio [data-page="pricing"] a[href="/get-started"][data-intent="primary"] {
+  background-color: var(--digital-red-500) !important;
+  color: var(--digital-white-50) !important;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Most Popular Get Started button hover */
+html.digital-studio .pricing-section .ButtonLink[data-intent="primary"]:hover,
+html.digital-studio .pricing-section a[href="/get-started"][data-intent="primary"]:hover,
+html.digital-studio [data-page="pricing"] .ButtonLink[data-intent="primary"]:hover,
+html.digital-studio [data-page="pricing"] a[href="/get-started"][data-intent="primary"]:hover {
+  background-color: var(--digital-red-600) !important;
+  color: var(--digital-white-50) !important;
+  border-color: var(--digital-red-600) !important;
+}
+
+/* Regular Get Started buttons in pricing - white background with red text and border */
+html.digital-studio .pricing-section .ButtonLink[data-intent="secondary"],
+html.digital-studio .pricing-section a[href="/get-started"][data-intent="secondary"],
+html.digital-studio [data-page="pricing"] .ButtonLink[data-intent="secondary"],
+html.digital-studio [data-page="pricing"] a[href="/get-started"][data-intent="secondary"] {
+  background-color: var(--digital-white-50) !important;
+  color: var(--digital-red-500) !important;
+  border: red solid 2px;
+  border-color: var(--digital-red-500) !important;
+}
+
+/* Regular Get Started buttons hover in pricing */
+html.digital-studio .pricing-section .ButtonLink[data-intent="secondary"]:hover,
+html.digital-studio .pricing-section a[href="/get-started"][data-intent="secondary"]:hover,
+html.digital-studio [data-page="pricing"] .ButtonLink[data-intent="secondary"]:hover,
+html.digital-studio [data-page="pricing"] a[href="/get-started"][data-intent="secondary"]:hover {
+  background-color: var(--digital-white-100) !important;
+  color: var(--digital-red-500) !important;
+  border-color: var(--digital-red-500) !important;
 }
 
 /* Admin and Login pages - Force light mode theme in digital-studio */
@@ -1858,4 +1931,168 @@ html.digital-studio [data-page="portfolio"] .category-active {
   background-color: #ef4444 !important;
   color: white !important;
   border-color: #ef4444 !important;
+}
+
+/* Dark theme overrides for pricing page */
+html.dark .pricing-section {
+  --surface-primary: var(--grayscale-800) !important;
+  --surface-secondary: var(--grayscale-700) !important;
+  --text-primary: var(--grayscale-50) !important;
+  --text-secondary: var(--grayscale-200) !important;
+  --text-tertiary: var(--grayscale-300) !important;
+}
+
+/* Dark theme pricing card backgrounds */
+html.dark .pricing-section .bg-\[--surface-primary\] {
+  background-color: var(--grayscale-800) !important;
+}
+
+html.dark .pricing-section .bg-\[--surface-secondary\] {
+  background-color: var(--grayscale-700) !important;
+}
+
+/* Dark theme pricing text colors */
+html.dark .pricing-section .text-\[--text-primary\] {
+  color: var(--grayscale-50) !important;
+}
+
+html.dark .pricing-section .text-\[--text-secondary\] {
+  color: var(--grayscale-200) !important;
+}
+
+html.dark .pricing-section .text-\[--text-tertiary\] {
+  color: var(--grayscale-300) !important;
+}
+
+/* Dark theme pricing card borders */
+html.dark .pricing-section .border-\[--border\] {
+  border-color: var(--grayscale-600) !important;
+}
+
+/* Dark theme specific pricing text elements */
+html.dark .pricing-section h1,
+html.dark .pricing-section h2,
+html.dark .pricing-section h3,
+html.dark .pricing-section h4,
+html.dark .pricing-section p,
+html.dark .pricing-section span,
+html.dark .pricing-section div {
+  color: var(--grayscale-50) !important;
+}
+
+/* Dark theme pricing card goal section */
+html.dark .pricing-section .bg-\[--surface-secondary\] {
+  background-color: var(--grayscale-700) !important;
+}
+
+/* Dark theme pricing card goal text */
+html.dark .pricing-section .bg-\[--surface-secondary\] .text-\[--text-secondary\] {
+  color: var(--grayscale-200) !important;
+}
+
+/* Dark theme pricing popular badge */
+html.dark .pricing-section .bg-\[--accent-500\] {
+  background-color: var(--accent-500) !important;
+}
+
+/* Dark theme pricing check icons */
+html.dark .pricing-section .text-\[--accent-500\] {
+  color: var(--accent-500) !important;
+}
+
+/* Dark theme overrides for get-started page */
+html.dark [data-page="get-started"] {
+  background-color: var(--grayscale-950) !important;
+  color: var(--grayscale-50) !important;
+}
+
+/* Dark theme get-started page backgrounds */
+html.dark [data-page="get-started"] .bg-white {
+  background-color: var(--grayscale-950) !important;
+}
+
+html.dark [data-page="get-started"] .min-h-screen {
+  background-color: var(--grayscale-950) !important;
+}
+
+/* Dark theme get-started page text colors */
+html.dark [data-page="get-started"] .text-gray-900 {
+  color: var(--grayscale-50) !important;
+}
+
+html.dark [data-page="get-started"] .text-gray-600 {
+  color: var(--grayscale-300) !important;
+}
+
+html.dark [data-page="get-started"] .text-gray-700 {
+  color: var(--grayscale-200) !important;
+}
+
+/* Dark theme get-started page cards */
+html.dark [data-page="get-started"] .card {
+  background-color: var(--grayscale-900) !important;
+  border-color: var(--grayscale-700) !important;
+}
+
+/* Dark theme get-started page form inputs */
+html.dark [data-page="get-started"] input,
+html.dark [data-page="get-started"] textarea {
+  background-color: var(--grayscale-800) !important;
+  border-color: var(--grayscale-600) !important;
+  color: var(--grayscale-50) !important;
+}
+
+html.dark [data-page="get-started"] input::placeholder,
+html.dark [data-page="get-started"] textarea::placeholder {
+  color: var(--grayscale-400) !important;
+}
+
+/* Dark theme get-started page focus states */
+html.dark [data-page="get-started"] input:focus,
+html.dark [data-page="get-started"] textarea:focus {
+  border-color: var(--accent-500) !important;
+  ring-color: var(--accent-500) !important;
+}
+
+/* Dark theme get-started page checkbox */
+html.dark [data-page="get-started"] .border-gray-300 {
+  border-color: var(--grayscale-600) !important;
+}
+
+/* Dark theme get-started page labels */
+html.dark [data-page="get-started"] label {
+  color: var(--grayscale-200) !important;
+}
+
+/* Override digital-studio theme for dark mode get-started page */
+html.dark html.digital-studio [data-page="get-started"] {
+  background-color: var(--grayscale-950) !important;
+  color: var(--grayscale-50) !important;
+}
+
+html.dark html.digital-studio [data-page="get-started"] * {
+  background-color: var(--grayscale-950) !important;
+  color: var(--grayscale-50) !important;
+}
+
+/* Dark theme get-started page cards override */
+html.dark html.digital-studio [data-page="get-started"] .card,
+html.dark html.digital-studio [data-page="get-started"] [class*="card"] {
+  background-color: var(--grayscale-900) !important;
+  border-color: var(--grayscale-700) !important;
+}
+
+/* Dark theme get-started page form elements override */
+html.dark html.digital-studio [data-page="get-started"] input,
+html.dark html.digital-studio [data-page="get-started"] textarea {
+  background-color: var(--grayscale-800) !important;
+  border-color: var(--grayscale-600) !important;
+  color: var(--grayscale-50) !important;
+}
+
+/* Dark theme get-started page text colors override */
+html.dark html.digital-studio [data-page="get-started"] .text-gray-900,
+html.dark html.digital-studio [data-page="get-started"] .text-gray-600,
+html.dark html.digital-studio [data-page="get-started"] .text-gray-700 {
+  color: var(--grayscale-50) !important;
 }
