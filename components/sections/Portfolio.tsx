@@ -15,43 +15,43 @@ export default function Portfolio() {
     {
       id: 1,
       title: "TikTok Ads for Local Brand",
-      category: "marketing",
-      image: "/a1.png",
+      category: "content",
+      image: "/7.png",
       year: "2025",
     },
     {
       id: 2,
       title: "Live Selling Event Setup",
-      category: "marketing",
-      image: "/a2.png",
+      category: "content",
+      image: "/8.png",
       year: "2025",
     },
     {
       id: 3,
       title: "Product Photography for Skincare",
-      category: "content",
-      image: "/a3.png",
+      category: "marketing",
+      image: "/9.png",
       year: "2024",
     },
     {
       id: 4,
       title: "Promo Video for Local Café",
       category: "content",
-      image: "/a4.png",
+      image: "/10.png",
       year: "2024",
     },
     {
       id: 5,
       title: "Portfolio Website for Designer",
-      category: "web",
-      image: "/a5.png",
+      category: "content",
+      image: "/11.png",
       year: "2025",
     },
     {
       id: 6,
       title: "Brand Identity for Clothing Line",
       category: "web",
-      image: "/a6.jpg",
+      image: "/12.png",
       year: "2024",
     },
   ]
@@ -99,8 +99,8 @@ export default function Portfolio() {
                         className="w-full transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 dark:bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        <h3 className="text-xl font-semibold text-white dark:text-zinc-100">{work.title}</h3>
-                        <p className="mt-2 text-sm text-gray-300 dark:text-zinc-300">{work.year}</p>
+                        {/* <h3 className="text-xl font-semibold text-white dark:text-zinc-100">{work.title}</h3> */}
+                        {/* <p className="mt-2 text-sm text-gray-300 dark:text-zinc-300">{work.year}</p> */}
                       </div>
                     </div>
                   </CardContent>

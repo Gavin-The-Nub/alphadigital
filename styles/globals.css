@@ -1839,12 +1839,12 @@ html.digital-studio [data-page="blog"] textarea::placeholder {
 
 /* Portfolio/Case Studies page styling - white background with red accents only */
 html.digital-studio [data-page="portfolio"] {
-  background-color: white !important;
+  background-color: rgb(255, 255, 255) !important;
   color: var(--grayscale-900) !important;
 }
 
 html.digital-studio [data-page="portfolio"] * {
-  background-color: white !important;
+  background-color: rgba(255, 255, 255, 0) !important;
   color: var(--grayscale-900) !important;
 }
 

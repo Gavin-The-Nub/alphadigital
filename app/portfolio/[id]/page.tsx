@@ -28,150 +28,385 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
-    id: "social-media-management",
-    title: "Complete Social Media Management",
-    client: "BeautyGlow Cosmetics",
-    category: "Social Media Management",
+    id: "content-case-1",
+    title: "Content Strategy #1",
+    client: "Client A",
+    category: "content",
+    duration: "5 months",
+    teamSize: "5 people",
+    brief: "Client A needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
+    results: [
+      "266% improvement in key performance indicators",
+      "10% growth in engagement",
+      "12% increase in conversions"
+    ],
+    technologies: ["Notion", "Surfer SEO", "Hootsuite", "Google Analytics", "Grammarly"],
+    images: {
+      main: "/co1.png",
+      gallery: ["/co11.png", "/co5.png", "/co3.png"]
+    },
+    featured: false
+  },
+  {
+    id: "marketing-case-2",
+    title: "Marketing Strategy #2",
+    client: "Client B",
+    category: "marketing",
+    duration: "5 months",
+    teamSize: "4 people",
+    brief: "Client B needed to improve their marketing efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive marketing strategy tailored to their business needs.",
+    results: [
+      "104% improvement in key performance indicators",
+      "35% growth in engagement",
+      "24% increase in conversions"
+    ],
+    technologies: ["Google Docs", "Notion", "Grammarly", "Google Analytics", "Mailchimp"],
+    images: {
+      main: "/m1.png",
+      gallery: ["/m5.png", "/m6.png", "/m3.png"]
+    },
+    featured: true
+  },
+  {
+    id: "content-case-3",
+    title: "Content Strategy #3",
+    client: "Client C",
+    category: "content",
     duration: "6 months",
     teamSize: "3 people",
-    brief: "BeautyGlow Cosmetics needed comprehensive social media management across Facebook, Instagram, and TikTok to increase brand awareness and drive sales. Their existing social presence was inconsistent and lacked engagement. They wanted to establish a strong brand presence and increase their online sales by 40%.",
-    solution: "We implemented a complete social media management strategy including content creation, community management, engagement strategies, and performance tracking. We created engaging content calendars, managed daily interactions, developed brand voice guidelines, and implemented data-driven optimization strategies to maximize reach and engagement.",
+    brief: "Client C needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
     results: [
-      "300% increase in social media followers",
-      "85% improvement in engagement rate",
-      "40% increase in website traffic from social",
-      "25% boost in online sales",
-      "Consistent brand voice across all platforms",
-      "Improved customer service response times"
+      "235% improvement in key performance indicators",
+      "17% growth in engagement",
+      "19% increase in conversions"
     ],
-    technologies: ["Facebook Business", "Instagram Business", "TikTok Creator Studio", "Canva Pro", "Buffer"],
+    technologies: ["Meta Ads", "Google Analytics", "Google Docs", "Grammarly", "Ahrefs"],
     images: {
-      main: "/a1.png",
-      gallery: ["/a1.png", "/a2.png", "/a3.png", "/a4.png", "/a5.png", "/a6.jpg"]
+      main: "/co2.png",
+      gallery: ["/co7.png", "/co5.png", "/co4.png"]
     },
     featured: true
   },
   {
-    id: "tiktok-live-selling",
-    title: "TikTok Live Selling Campaign",
-    client: "FashionForward Boutique",
-    category: "TikTok Live Selling",
-    duration: "3 months",
+    id: "marketing-case-4",
+    title: "Marketing Strategy #4",
+    client: "Client D",
+    category: "marketing",
+    duration: "6 months",
     teamSize: "4 people",
-    brief: "FashionForward Boutique wanted to launch TikTok live selling to reach younger audiences and increase sales. They needed support with live session planning, promotion, and audience engagement strategies. Their goal was to generate $10K+ in live session sales and build a loyal TikTok community.",
-    solution: "We provided comprehensive TikTok live selling support including session planning, content creation, audience building, live hosting assistance, and post-session analytics. We developed engaging scripts, promotional strategies, and audience engagement techniques that maximized viewer retention and conversion rates.",
+    brief: "Client D needed to improve their marketing efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive marketing strategy tailored to their business needs.",
     results: [
-      "500% increase in TikTok followers",
-      "$15K+ in live session sales",
-      "Average 2K+ viewers per session",
-      "90% customer satisfaction rate",
-      "Strong community engagement",
-      "Consistent weekly live sessions"
+      "99% improvement in key performance indicators",
+      "23% growth in engagement",
+      "24% increase in conversions"
     ],
-    technologies: ["TikTok Live", "TikTok Ads", "Streamlabs", "OBS Studio", "Analytics Tools"],
+    technologies: ["Mailchimp", "Google Ads", "Google Docs", "Surfer SEO", "Hootsuite"],
     images: {
-      main: "/a2.png",
-      gallery: ["/a2.png", "/a1.png", "/a3.png", "/a4.png", "/a5.png", "/a6.jpg"]
+      main: "/m2.png",
+      gallery: ["/m8.png", "/m6.png", "/m4.png"]
+    },
+    featured: false
+  },
+  {
+    id: "content-case-5",
+    title: "Content Strategy #5",
+    client: "Client E",
+    category: "content",
+    duration: "4 months",
+    teamSize: "4 people",
+    brief: "Client E needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
+    results: [
+      "244% improvement in key performance indicators",
+      "28% growth in engagement",
+      "10% increase in conversions"
+    ],
+    technologies: ["Notion", "Mailchimp", "Hootsuite", "Ahrefs", "Google Analytics"],
+    images: {
+      main: "/co3.png",
+      gallery: ["/co12.png", "/co6.png", "/co5.png"]
     },
     featured: true
   },
   {
-    id: "digital-campaign-marketing",
-    title: "Multi-Platform Digital Campaign",
-    client: "TechStart Solutions",
-    category: "Digital Campaign Marketing",
+    id: "marketing-case-6",
+    title: "Marketing Strategy #6",
+    client: "Client F",
+    category: "marketing",
+    duration: "5 months",
+    teamSize: "3 people",
+    brief: "Client F needed to improve their marketing efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive marketing strategy tailored to their business needs.",
+    results: [
+      "138% improvement in key performance indicators",
+      "48% growth in engagement",
+      "32% increase in conversions"
+    ],
+    technologies: ["Google Docs", "Meta Ads", "Grammarly", "Google Analytics", "Notion"],
+    images: {
+      main: "/m3.jpg",
+      gallery: ["/m7.png", "/m5.png", "/m6.png"]
+    },
+    featured: false
+  },
+  {
+    id: "content-case-7",
+    title: "Content Strategy #7",
+    client: "Client G",
+    category: "content",
+    duration: "5 months",
+    teamSize: "3 people",
+    brief: "Client G needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
+    results: [
+      "213% improvement in key performance indicators",
+      "40% growth in engagement",
+      "31% increase in conversions"
+    ],
+    technologies: ["Grammarly", "Ahrefs", "Google Analytics", "Surfer SEO", "Notion"],
+    images: {
+      main: "/co4.png",
+      gallery: ["/co11.png", "/co8.png", "/co1.png"]
+    },
+    featured: true
+  },
+  {
+    id: "marketing-case-8",
+    title: "Marketing Strategy #8",
+    client: "Client H",
+    category: "marketing",
+    duration: "3 months",
+    teamSize: "3 people",
+    brief: "Client H needed to improve their marketing efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive marketing strategy tailored to their business needs.",
+    results: [
+      "181% improvement in key performance indicators",
+      "19% growth in engagement",
+      "17% increase in conversions"
+    ],
+    technologies: ["Mailchimp", "Grammarly", "Google Docs", "Ahrefs", "Meta Ads"],
+    images: {
+      main: "/m4.jpg",
+      gallery: ["/m7.png", "/m5.png", "/m1.png"]
+    },
+    featured: true
+  },
+  {
+    id: "content-case-9",
+    title: "Content Strategy #9",
+    client: "Client I",
+    category: "content",
+    duration: "6 months",
+    teamSize: "2 people",
+    brief: "Client I needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
+    results: [
+      "132% improvement in key performance indicators",
+      "18% growth in engagement",
+      "26% increase in conversions"
+    ],
+    technologies: ["Notion", "Surfer SEO", "Grammarly", "Google Analytics", "Google Docs"],
+    images: {
+      main: "/co5.png",
+      gallery: ["/co2.png", "/co10.png", "/co3.png"]
+    },
+    featured: false
+  },
+  {
+    id: "content-case-10",
+    title: "Content Strategy #10",
+    client: "Client J",
+    category: "content",
+    duration: "4 months",
+    teamSize: "4 people",
+    brief: "Client J needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
+    results: [
+      "118% improvement in key performance indicators",
+      "46% growth in engagement",
+      "28% increase in conversions"
+    ],
+    technologies: ["Ahrefs", "Google Ads", "Mailchimp", "Google Analytics", "Notion"],
+    images: {
+      main: "/co6.jpg",
+      gallery: ["/co1.png", "/co12.png", "/co4.png"]
+    },
+    featured: false
+  },
+  {
+    id: "content-case-11",
+    title: "Content Strategy #11",
+    client: "Client K",
+    category: "content",
+    duration: "4 months",
+    teamSize: "2 people",
+    brief: "Client K needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
+    results: [
+      "214% improvement in key performance indicators",
+      "22% growth in engagement",
+      "40% increase in conversions"
+    ],
+    technologies: ["Grammarly", "Google Docs", "Surfer SEO", "Mailchimp", "Ahrefs"],
+    images: {
+      main: "/co7.jpg",
+      gallery: ["/co1.png", "/co2.png", "/co4.png"]
+    },
+    featured: false
+  },
+  {
+    id: "marketing-case-12",
+    title: "Marketing Strategy #12",
+    client: "Client L",
+    category: "marketing",
+    duration: "6 months",
+    teamSize: "4 people",
+    brief: "Client L needed to improve their marketing efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive marketing strategy tailored to their business needs.",
+    results: [
+      "212% improvement in key performance indicators",
+      "42% growth in engagement",
+      "37% increase in conversions"
+    ],
+    technologies: ["Google Ads", "Grammarly", "Notion", "Mailchimp", "Surfer SEO"],
+    images: {
+      main: "/m5.png",
+      gallery: ["/m6.png", "/m1.png", "/m2.png"]
+    },
+    featured: true
+  },
+  {
+    id: "content-case-13",
+    title: "Content Strategy #13",
+    client: "Client M",
+    category: "content",
+    duration: "3 months",
+    teamSize: "3 people",
+    brief: "Client M needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
+    results: [
+      "136% improvement in key performance indicators",
+      "20% growth in engagement",
+      "27% increase in conversions"
+    ],
+    technologies: ["Surfer SEO", "Google Analytics", "Google Ads", "Grammarly", "Ahrefs"],
+    images: {
+      main: "/co8.jpg",
+      gallery: ["/co6.png", "/co5.png", "/co2.png"]
+    },
+    featured: false
+  },
+  {
+    id: "marketing-case-14",
+    title: "Marketing Strategy #14",
+    client: "Client N",
+    category: "marketing",
     duration: "4 months",
     teamSize: "5 people",
-    brief: "TechStart Solutions needed a comprehensive digital marketing campaign to launch their new SaaS product. They wanted to increase brand awareness and generate qualified leads across multiple platforms. Their target was to generate 100+ qualified leads and establish market presence.",
-    solution: "We developed a data-driven marketing campaign across Facebook, Instagram, Google Ads, and LinkedIn. The campaign included targeted advertising, content marketing, email sequences, and conversion optimization strategies. We implemented A/B testing and continuous optimization to maximize ROI and lead quality.",
+    brief: "Client N needed to improve their marketing efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive marketing strategy tailored to their business needs.",
     results: [
-      "200% increase in brand awareness",
-      "150 qualified leads generated",
-      "35% improvement in conversion rate",
-      "40% reduction in cost per acquisition",
-      "Strong market positioning",
-      "Sustainable lead generation pipeline"
+      "191% improvement in key performance indicators",
+      "50% growth in engagement",
+      "20% increase in conversions"
     ],
-    technologies: ["Facebook Ads", "Google Ads", "LinkedIn Ads", "Mailchimp", "Google Analytics"],
+    technologies: ["Google Docs", "Notion", "Google Analytics", "Mailchimp", "Ahrefs"],
     images: {
-      main: "/a3.png",
-      gallery: ["/a3.png", "/a1.png", "/a2.png", "/a4.png", "/a5.png", "/a6.jpg"]
+      main: "/m6.png",
+      gallery: ["/m4.png", "/m2.png", "/m7.png"]
     },
-    featured: false
+    featured: true
   },
   {
-    id: "photo-video-production",
-    title: "Professional Content Production",
-    client: "LuxeInterior Design",
-    category: "Photo & Video Production",
-    duration: "2 months",
+    id: "content-case-15",
+    title: "Content Strategy #15",
+    client: "Client O",
+    category: "content",
+    duration: "5 months",
     teamSize: "3 people",
-    brief: "LuxeInterior Design needed professional photography and video content for their social media, website, and marketing materials. They wanted to showcase their interior design projects with high-quality visuals that would attract high-end clients and increase their portfolio appeal.",
-    solution: "We provided comprehensive photo and video production services including professional photography, video creation, editing, and content optimization for various platforms. We created branded content that highlighted their design expertise, captured the essence of their projects, and maintained consistent visual quality across all deliverables.",
+    brief: "Client O needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
     results: [
-      "Professional portfolio of 50+ images",
-      "10 high-quality video testimonials",
-      "Consistent brand visual identity",
-      "60% increase in social media engagement",
-      "Enhanced client presentation materials",
-      "Improved website conversion rates"
+      "180% improvement in key performance indicators",
+      "33% growth in engagement",
+      "38% increase in conversions"
     ],
-    technologies: ["Adobe Photoshop", "Adobe Premiere Pro", "Canon EOS R5", "DJI Drone", "Lightroom"],
+    technologies: ["Meta Ads", "Google Analytics", "Google Docs", "Grammarly", "Notion"],
     images: {
-      main: "/a4.png",
-      gallery: ["/a4.png", "/a1.png", "/a2.png", "/a3.png", "/a5.png", "/a6.jpg"]
+      main: "/co9.jpg",
+      gallery: ["/co4.png", "/co1.png", "/co7.png"]
     },
     featured: false
   },
   {
-    id: "branding-services",
-    title: "Complete Brand Identity Development",
-    client: "EcoFresh Foods",
-    category: "Branding Services",
-    duration: "8 weeks",
-    teamSize: "3 people",
-    brief: "EcoFresh Foods, a new organic food delivery service, needed a complete brand identity system to establish themselves in the competitive food delivery market and appeal to health-conscious consumers. They wanted to differentiate themselves from traditional delivery services.",
-    solution: "We developed a comprehensive brand identity including logo design, color palette, typography, brand guidelines, and visual assets. The design emphasized freshness, sustainability, and health while maintaining modern appeal. We created a complete brand story and visual system that resonated with their target audience.",
-    results: [
-      "Complete brand identity system",
-      "Consistent visual presence across platforms",
-      "Strong market differentiation",
-      "Positive customer feedback on brand recognition",
-      "Successful launch campaign",
-      "Increased investor interest"
-    ],
-    technologies: ["Adobe Illustrator", "Figma", "Brand Guidelines", "Print Design", "Digital Assets"],
-    images: {
-      main: "/a5.png",
-      gallery: ["/a5.png", "/a1.png", "/a2.png", "/a3.png", "/a4.png", "/a6.jpg"]
-    },
-    featured: false
-  },
-  {
-    id: "web-development",
-    title: "Modern Website Development",
-    client: "FitLife Studio",
-    category: "Web Development",
-    duration: "6 weeks",
+    id: "content-case-16",
+    title: "Content Strategy #16",
+    client: "Client P",
+    category: "content",
+    duration: "4 months",
     teamSize: "4 people",
-    brief: "FitLife Studio needed a modern, responsive website that would showcase their fitness services, allow online booking, and integrate with their social media presence. The existing site was outdated and not mobile-friendly, causing them to lose potential clients.",
-    solution: "We built a modern, responsive website with online booking functionality, social media integration, and SEO optimization. The site featured a clean design, fast loading times, and seamless user experience across all devices. We implemented advanced features like class scheduling and payment processing.",
+    brief: "Client P needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
     results: [
-      "Modern, responsive website",
-      "50% increase in online bookings",
-      "40% improvement in page load speed",
-      "Mobile-first design implementation",
-      "Enhanced user experience",
-      "Improved search engine rankings"
+      "168% improvement in key performance indicators",
+      "26% growth in engagement",
+      "29% increase in conversions"
     ],
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Vercel"],
+    technologies: ["Surfer SEO", "Notion", "Google Analytics", "Ahrefs", "Mailchimp"],
     images: {
-      main: "/a6.jpg",
-      gallery: ["/a6.jpg", "/a1.png", "/a2.png", "/a3.png", "/a4.png", "/a5.png"]
+      main: "/co10.jpg",
+      gallery: ["/co6.png", "/co12.png", "/co5.png"]
+    },
+    featured: true
+  },
+  {
+    id: "content-case-17",
+    title: "Content Strategy #17",
+    client: "Client Q",
+    category: "content",
+    duration: "3 months",
+    teamSize: "2 people",
+    brief: "Client Q needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
+    results: [
+      "198% improvement in key performance indicators",
+      "34% growth in engagement",
+      "41% increase in conversions"
+    ],
+    technologies: ["Grammarly", "Meta Ads", "Google Docs", "Surfer SEO", "Google Analytics"],
+    images: {
+      main: "/co11.jpg",
+      gallery: ["/co3.png", "/co9.png", "/co1.png"]
     },
     featured: false
+  },
+  {
+    id: "content-case-18",
+    title: "Content Strategy #18",
+    client: "Client R",
+    category: "content",
+    duration: "6 months",
+    teamSize: "5 people",
+    brief: "Client R needed to improve their content efforts to achieve better performance metrics.",
+    solution: "We implemented a comprehensive content strategy tailored to their business needs.",
+    results: [
+      "222% improvement in key performance indicators",
+      "38% growth in engagement",
+      "36% increase in conversions"
+    ],
+    technologies: ["Ahrefs", "Grammarly", "Mailchimp", "Notion", "Surfer SEO"],
+    images: {
+      main: "/co12.png",
+      gallery: ["/co10.png", "/co7.png", "/co5.png"]
+    },
+    featured: true
   }
 ];
+
 
 export default function CaseStudyPage() {
   const params = useParams();
