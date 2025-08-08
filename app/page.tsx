@@ -28,7 +28,7 @@ const staticHomeContent = {
       title: "Build the future of your business",
       subtitle: "We help brands grow through strategic marketing, standout content, and modern websites — tailored to meet your goals.",
       customerSatisfactionBanner: {
-        text: "Join 10,000+ satisfied customers",
+        text: "Join 100+ satisfied customers",
         avatars: {
           items: [
             {
