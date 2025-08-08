@@ -1072,7 +1072,7 @@ html.digital-studio .testimonials-section h5,
 html.digital-studio .testimonials-section p,
 html.digital-studio .testimonials-section span,
 html.digital-studio .testimonials-section div {
-  color: var(--digital-white-900) !important;
+  color: black !important;
 }
 
 /* Override theme variables for Testimonials section */
@@ -1140,7 +1140,7 @@ html.digital-studio .relative.overflow-clip {
 html.digital-studio .testimonials-section *,
 html.digital-studio .testimonials-grid-section *,
 html.digital-studio [class*="testimonial"] * {
-  color: var(--digital-white-900) !important;
+  color: black !important;
 }
 
 /* Target specific testimonial text classes */
@@ -1148,19 +1148,19 @@ html.digital-studio .testimonials-section .text-\[--text-primary\],
 html.digital-studio .testimonials-section .text-\[--dark-text-primary\],
 html.digital-studio .testimonials-section .text-\[--text-tertiary\],
 html.digital-studio .testimonials-section .text-\[--dark-text-tertiary\] {
-  color: var(--digital-white-900) !important;
+  color:  black!important;
 }
 
 /* Target blockquote and testimonial content */
 html.digital-studio .testimonials-section blockquote,
 html.digital-studio .testimonials-section h5,
 html.digital-studio .testimonials-section p {
-  color: var(--digital-white-900) !important;
+  color:  black !important;
 }
 
 /* Target the embla carousel slides */
 html.digital-studio .embla__slide * {
-  color: var(--digital-white-900) !important;
+  color: black !important;
 }
 
 /* Override CSS custom properties for testimonials */
@@ -1171,6 +1171,48 @@ html.digital-studio .testimonials-section {
   --dark-text-primary: var(--digital-white-900) !important;
   --dark-text-secondary: var(--digital-white-700) !important;
   --dark-text-tertiary: var(--digital-white-700) !important;
+}
+
+/* Specific targeting for testimonials heading text */
+html.digital-studio .relative.overflow-clip h4,
+html.digital-studio .relative.overflow-clip .text-3xl,
+html.digital-studio .relative.overflow-clip .text-4xl,
+html.digital-studio .relative.overflow-clip .font-medium {
+  color: black !important;
+}
+
+/* Target the heading container specifically */
+html.digital-studio .relative.overflow-clip .flex.flex-col.gap-3 h4,
+html.digital-studio .relative.overflow-clip .flex.flex-col.gap-3 .text-3xl,
+html.digital-studio .relative.overflow-clip .flex.flex-col.gap-3 .text-4xl {
+  color: black !important;
+}
+
+/* Target testimonials section specifically */
+html.digital-studio .relative.overflow-clip {
+  background-color: var(--digital-white-50) !important;
+}
+
+/* Force black text in testimonials section */
+html.digital-studio .relative.overflow-clip * {
+  color: black !important;
+}
+
+/* Make testimonial arrows white in digital theme */
+html.digital-studio .relative.overflow-clip svg[data-radix-collection-item],
+html.digital-studio .relative.overflow-clip .size-6,
+html.digital-studio .relative.overflow-clip svg {
+  color: var(--digital-white-50) !important;
+  fill: var(--digital-white-50) !important;
+  stroke: var(--digital-white-50) !important;
+}
+
+/* Target the arrow buttons specifically */
+html.digital-studio .relative.overflow-clip button svg,
+html.digital-studio .relative.overflow-clip .ButtonLink svg {
+  color: var(--digital-white-50) !important;
+  fill: var(--digital-white-50) !important;
+  stroke: var(--digital-white-50) !important;
 }
 
 /* Pricing Section - Light mode styling with dark gray text */
@@ -1904,7 +1946,7 @@ html.digital-studio button[aria-label="Toggle Menu"] svg {
 html.digital-studio .testimonials-section p[class*="text-[--text-tertiary]"],
 html.digital-studio .testimonials-section p[class*="text-lg"],
 html.digital-studio .testimonials-section .text-[--text-tertiary] {
-  color: var(--digital-white-900) !important;
+  color: black !important;
 }
 
 /* Portfolio category filter buttons */
