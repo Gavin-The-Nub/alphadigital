@@ -570,7 +570,7 @@ const caseStudies: CaseStudy[] = [
     id: "28",
     title: "Content Strategy #18",
     client: "Client R",
-    category: "content",
+    category:  "content",
     duration: "6 months",
     teamSize: "5 people",
     brief: "Client R needed to improve their content efforts to achieve better performance metrics.",
